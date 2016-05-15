@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Evert Timberg</title>
-    <link>everttimberg.io/post/</link>
+    <link>http://everttimberg.io/post/</link>
     <description>Recent content in Posts on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="everttimberg.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://everttimberg.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About this Site</title>
-      <link>/everttimberg.io/post/welcome/</link>
+      <link>http://everttimberg.io/post/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/everttimberg.io/post/welcome/</guid>
+      <guid>http://everttimberg.io/post/welcome/</guid>
       <description>&lt;p&gt;Welcome to my personal site. I wrote the site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in Go. It&amp;rsquo;s been a great introduction to the Go template language. Hosting is done via static files published to Github pages.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
