@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Evert Timberg</title>
+    <link>everttimberg.io/post/</link>
+    <description>Recent content in Posts on Evert Timberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="everttimberg.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About this Site</title>
+      <link>/everttimberg.io/post/welcome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/everttimberg.io/post/welcome/</guid>
+      <description>&lt;p&gt;Welcome to my personal site. I wrote the site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in Go. It&amp;rsquo;s been a great introduction to the Go template language. Hosting is done via static files published to Github pages.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+I tried to make the site depend on as little JavaScript as possible. The only necessary JS is used to trigger the mobile menu view. Everything else was written using pure CSS and media queries. I used Sass to compile the CSS. The &lt;a href=&#34;https://github.com/mastastealth/sass-flex-mixin&#34;&gt;sass flex mixin&lt;/a&gt; was particularly helpful for generating the flexbox styling used in the photo albums.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+I used &lt;a href=&#34;https://www.npmjs.com/package/gulp-image-resize&#34;&gt;gulp-image-resize&lt;/a&gt; in a gulp task to automatically generate thumbnails for images. This greatly improved page performance and kept the process relatively pain free. In the future, I will likely add automatic watermarking as well.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
