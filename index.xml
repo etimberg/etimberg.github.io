@@ -6,8 +6,81 @@
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2016 16:37:15 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 31 Dec 2016 18:45:47 -0500</lastBuildDate>
     <atom:link href="http://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Reflecting on Chart.js in 2016</title>
+      <link>http://everttimberg.io/post/new-year-2017/</link>
+      <pubDate>Sat, 31 Dec 2016 18:45:47 -0500</pubDate>
+      
+      <guid>http://everttimberg.io/post/new-year-2017/</guid>
+      <description>
+
+&lt;script src=&#34;http://everttimberg.io/js/Chart.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Chart.js has had an incredibly last year. In April, we successfully launched v2.0 culminating a year and a half of hard work. We&amp;rsquo;ve had a number of smaller releases after that, each of which has helped build on the incredibly interactivity that comes standard in v2. We also released our first new chart type in a long time; the horizontal bar chart. This was a long sought request, that fit in well with the work we did in v2.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+Coupled with this work, we saw a dramatic increase in use this year, with monthly NPM installs going from ~20k to over 200k per month. It&amp;rsquo;s amazing and humbling to see so many users choosing Chart.js for their projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;chart-container&#34;&gt;
+	&lt;canvas id=&#34;chartjs-monthly-downloads&#34; class=&#34;extra-large-chart&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var ctx = document.getElementById(&#34;chartjs-monthly-downloads&#34;).getContext(&#39;2d&#39;);
+var chartInstance = new Chart(ctx, 
+{
+    type: &#39;line&#39;,
+    data: {
+        labels: [&#39;Jan 2015&#39;, &#39;Feb 2015&#39;, &#39;Mar 2015&#39;, &#39;Apr 2015&#39;, &#39;May 2015&#39;, &#39;Jun 2015&#39;, &#39;Jul 2015&#39;, &#39;Aug 2015&#39;, &#39;Sep 2015&#39;, &#39;Oct 2015&#39;, &#39;Nov 2015&#39;, &#39;Dec 2015&#39;, &#39;Jan 2016&#39;, &#39;Feb 2016&#39;, &#39;Mar 2016&#39;, &#39;Apr 2016&#39;, &#39;May 2016&#39;, &#39;Jun 2016&#39;, &#39;Jul 2016&#39;, &#39;Aug 2016&#39;, &#39;Sep 2016&#39;, &#39;Oct 2016&#39;, &#39;Nov 2016&#39;, &#39;Dec 2016&#39;],
+        datasets: [{
+            data: [826, 1240, 2156, 3231, 4050, 5802, 6817, 7029, 8251, 10870, 13887, 17470, 20498, 27370, 42472, 61385, 70688, 79499, 86129, 113562, 135716, 181799, 204399, 201846],
+            label: &#39;Chart.js NPM Installs&#39;,
+            borderColor: &#39;#36A2EB&#39;,
+            pointBackgroundColor: &#39;#36A2EB&#39;,
+            backgroundColor: &#39;rgba(54,162,235, 0.4)&#39;,
+            fill: false
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: &#39;Chart.js Monthly Installs&#39;
+        },
+        legend: {
+            display: false
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var ds = data.datasets[tooltipItem.datasetIndex];
+                    var datasetLabel = ds.label;
+                    return datasetLabel + &#34;: &#34; + ds.data[tooltipItem.index].toLocaleString();
+                }
+            }
+        }
+    }
+}
+);
+&lt;/script&gt;
+&lt;em&gt;The data in the above chart is from &lt;a href=&#34;https://npm-stat.com/charts.html?package=Chart.js&amp;amp;from=2015-01-01&amp;amp;to=2016-12-31&#34;&gt;NPM Stat&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2017-roadmap&#34;&gt;2017 Roadmap&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;
+In 2017, we are committed to working on improving the ability to run Chart.js in an environment other than the browser. In version 2.5, we will have factored out the browser specific events into a removable piece known as a &lt;code&gt;platform&lt;/code&gt;. With this change, it will be possible to create a build that runs in a JavaScript environment that does not have the DOM APIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+We have also committed to improving our documentation. We are working on creating auto-generated documentation so that we can have the latest dev docs auto update when new commits are added. This will allow us to be more responsive to user feedback and ensure timely corrections when the docs have errors.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+Overall, 2017 is shaping up to be a great year for Chart.js. Have a safe and happy new year!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Exploring Toronto</title>

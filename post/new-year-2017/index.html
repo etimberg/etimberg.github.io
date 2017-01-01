@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	
+	<title>
+		Evert Timberg
+	</title>
+
+	
+	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+	
+	<link rel="stylesheet" type="text/css" href="/css/evinson.css">
+
+	
+	<script src="/js/evinson.js"></script>
+
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	
+
+	
+	
+	
+</head>
+
+	<body>
+	
+		<aside id="sideMenu" class="sidebar">
+	<div class="menu">
+		<ul>
+			<li class="home-menu-item"><a class="menu-link" href="http://everttimberg.io/">Evert Timberg </a></li>
+			
+			
+				<a class="menu-link" href="/about/"><li class="side-menu-item">About</li></a>
+				
+			
+				<a class="menu-link" href="/project/"><li class="side-menu-item">Projects</li></a>
+				
+			
+				<a class="menu-link" href="/album/"><li class="side-menu-item">Photography</li></a>
+				
+			
+				<a class="menu-link" href="/post/"><li class="side-menu-item">Blog</li></a>
+				
+			
+		</ul>
+	</div>
+</aside>
+		<div id="mobileNavButton" class="mobileMenuBar">
+			<a class="mobileNav"><span></span></a>
+		</div>
+		<div class="content hasSidebar">
+	
+
+
+<h1 class="page-title">Reflecting on Chart.js in 2016</h1>
+
+<div class="project-content">
+
+
+<script src="/js/Chart.min.js"></script>
+
+<p>Chart.js has had an incredibly last year. In April, we successfully launched v2.0 culminating a year and a half of hard work. We&rsquo;ve had a number of smaller releases after that, each of which has helped build on the incredibly interactivity that comes standard in v2. We also released our first new chart type in a long time; the horizontal bar chart. This was a long sought request, that fit in well with the work we did in v2.</p>
+
+<p><br>
+Coupled with this work, we saw a dramatic increase in use this year, with monthly NPM installs going from ~20k to over 200k per month. It&rsquo;s amazing and humbling to see so many users choosing Chart.js for their projects.</p>
+
+<p><div class="chart-container">
+	<canvas id="chartjs-monthly-downloads" class="extra-large-chart"></canvas>
+</div>
+<script>
+var ctx = document.getElementById("chartjs-monthly-downloads").getContext('2d');
+var chartInstance = new Chart(ctx, 
+{
+    type: 'line',
+    data: {
+        labels: ['Jan 2015', 'Feb 2015', 'Mar 2015', 'Apr 2015', 'May 2015', 'Jun 2015', 'Jul 2015', 'Aug 2015', 'Sep 2015', 'Oct 2015', 'Nov 2015', 'Dec 2015', 'Jan 2016', 'Feb 2016', 'Mar 2016', 'Apr 2016', 'May 2016', 'Jun 2016', 'Jul 2016', 'Aug 2016', 'Sep 2016', 'Oct 2016', 'Nov 2016', 'Dec 2016'],
+        datasets: [{
+            data: [826, 1240, 2156, 3231, 4050, 5802, 6817, 7029, 8251, 10870, 13887, 17470, 20498, 27370, 42472, 61385, 70688, 79499, 86129, 113562, 135716, 181799, 204399, 201846],
+            label: 'Chart.js NPM Installs',
+            borderColor: '#36A2EB',
+            pointBackgroundColor: '#36A2EB',
+            backgroundColor: 'rgba(54,162,235, 0.4)',
+            fill: false
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Chart.js Monthly Installs'
+        },
+        legend: {
+            display: false
+        },
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var ds = data.datasets[tooltipItem.datasetIndex];
+                    var datasetLabel = ds.label;
+                    return datasetLabel + ": " + ds.data[tooltipItem.index].toLocaleString();
+                }
+            }
+        }
+    }
+}
+);
+</script>
+<em>The data in the above chart is from <a href="https://npm-stat.com/charts.html?package=Chart.js&amp;from=2015-01-01&amp;to=2016-12-31">NPM Stat</a></em></p>
+
+<p><br>
+<br></p>
+
+<h2 id="2017-roadmap">2017 Roadmap</h2>
+
+<p><br>
+In 2017, we are committed to working on improving the ability to run Chart.js in an environment other than the browser. In version 2.5, we will have factored out the browser specific events into a removable piece known as a <code>platform</code>. With this change, it will be possible to create a build that runs in a JavaScript environment that does not have the DOM APIs.</p>
+
+<p><br>
+We have also committed to improving our documentation. We are working on creating auto-generated documentation so that we can have the latest dev docs auto update when new commits are added. This will allow us to be more responsive to user feedback and ensure timely corrections when the docs have errors.</p>
+
+<p><br>
+Overall, 2017 is shaping up to be a great year for Chart.js. Have a safe and happy new year!</p>
+
+</div>
+
+<ul class="social-menu">
+
+	<li class="social-menu-item">
+		<a class="menu-link" href="https://github.com/etimberg"><i class="fa fa-github"></i></a>
+	</li>
+
+
+
+	<li class="social-menu-item">
+		<a class="menu-link" href="https://linkedin.com/in/etimberg"><i class="fa fa-linkedin"></i></a>
+	</li>
+
+
+
+	<li class="social-menu-item">
+		<a class="menu-link" href="https://twitter.com/EvertTimberg"><i class="fa fa-twitter"></i></a>
+	</li>
+
+</ul>
+		<div class="footer-content hasSidebar">
+			Copyright 2017 Evert Timberg
+		</div>
+	</body>
+	
+	
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-77722793-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</html>
