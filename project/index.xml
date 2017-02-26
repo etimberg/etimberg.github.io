@@ -58,6 +58,27 @@ var chartInstance = new Chart(ctx,
     </item>
     
     <item>
+      <title>RNA Binding Site Finder</title>
+      <link>http://everttimberg.io/project/rna-binding-site-finder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://everttimberg.io/project/rna-binding-site-finder/</guid>
+      <description>
+
+&lt;p&gt;This was a quick tool I wrote for a friend. It allows the user to search a sequence of RNA for locations that could potentially bind with the search sequence. It has options to allow for partial matches where only part of the string matches a location in the RNA sequence.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;correlation-with-rna-secondary-structure&#34;&gt;Correlation with RNA Secondary Structure&lt;/h2&gt;
+
+&lt;p&gt;By using the secondary structure configuration, it&amp;rsquo;s possible to correlate matches against locations that are single stranded. If secondary structures are added, they need to be added in a Vienna syntax. Matches are reported including the number of single stranded bases in the match.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+You can try the app &lt;a href=&#34;http://everttimberg.io/app/rna/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Chart.js Zoom Plug-In</title>
       <link>http://everttimberg.io/project/chart.zoom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
