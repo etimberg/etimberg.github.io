@@ -6,8 +6,53 @@
     <description>Recent content in Posts on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Dec 2016 18:45:47 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 30 Apr 2017 20:49:05 -0400</lastBuildDate>
     <atom:link href="http://everttimberg.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Password Management and Ad Blocking</title>
+      <link>http://everttimberg.io/post/family-tech/</link>
+      <pubDate>Sun, 30 Apr 2017 20:49:05 -0400</pubDate>
+      
+      <guid>http://everttimberg.io/post/family-tech/</guid>
+      <description>
+
+&lt;p&gt;There are a number of tools that can make browsing safer and faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;last-pass&#34;&gt;Last Pass&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.lastpass.com/&#34;&gt;LastPass&lt;/a&gt; is a program that you install into your browser. It saves your passwords so that you don&amp;rsquo;t have to remember them. To install simply click the &amp;ldquo;Get LastPass Free&amp;rdquo; button and follow the instructions. As part of the installation process, you&amp;rsquo;ll need to create an account and a master password. Keep this master password safe, since if you lose it you will lose access to all the saved passwords.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+If you sign in to LastPass on another computer, all your passwords will be synced so that you don&amp;rsquo;t have to remember them. The free LastPass version will not sync your passwords to a mobile device.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Once you have LastPass installed, you&amp;rsquo;ll get a redicon in your toolbar like the one in the image below. Once you&amp;rsquo;ve signed in, this icon will allow you to find passwords that have been saved in your vault.
+&lt;image class=&#34;&#34; src=&#34;http://everttimberg.io/images/family-tech/last-pass-toolbar-icon.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ublock-origin&#34;&gt;uBlock Origin&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en&#34;&gt;uBlock Origin&lt;/a&gt; is a program that blocks ads from running in your browser. Blocking ads means that websites will load faster and your browsing habits won&amp;rsquo;t be tracked by a third party, and it reduces the chances of getting malware.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Installing it is easy in Chrome. All you have to do is click the link to add it as an extension. From then on it should be activated and blocking ads. You can deactivate it in the future by going to &lt;code&gt;chrome://extensions&lt;/code&gt; in a browsers tab.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;incognito-mode&#34;&gt;Incognito Mode&lt;/h2&gt;
+
+&lt;p&gt;Chrome has a mode to hide your history and cookies. The &lt;a href=&#34;https://support.google.com/chrome/answer/95464?source=gsearch&amp;amp;hl=en&#34;&gt;documentation&lt;/a&gt; has some great details on how to use it.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+The case study I gave is airline tickes. Airline websites will store a cookie on your computer to keep track of which flights you&amp;rsquo;ve viewed. When you return to the site, the price displayed will be higher than before. Using incognito mode (and closing it between visits to the site) will prevent this behaviour.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Reflecting on Chart.js in 2016</title>
