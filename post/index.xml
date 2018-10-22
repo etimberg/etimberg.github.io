@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Evert Timberg</title>
-    <link>http://everttimberg.io/post/</link>
+    <link>https://everttimberg.io/post/</link>
     <description>Recent content in Posts on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 30 Apr 2017 20:49:05 -0400</lastBuildDate>
-    <atom:link href="http://everttimberg.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://everttimberg.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Password Management and Ad Blocking</title>
-      <link>http://everttimberg.io/post/family-tech/</link>
+      <link>https://everttimberg.io/post/family-tech/</link>
       <pubDate>Sun, 30 Apr 2017 20:49:05 -0400</pubDate>
       
-      <guid>http://everttimberg.io/post/family-tech/</guid>
+      <guid>https://everttimberg.io/post/family-tech/</guid>
       <description>
 
 &lt;p&gt;There are a number of tools that can make browsing safer and faster.&lt;/p&gt;
@@ -30,7 +30,7 @@ If you sign in to LastPass on another computer, all your passwords will be synce
 
 &lt;p&gt;&lt;br /&gt;
 Once you have LastPass installed, you&amp;rsquo;ll get a redicon in your toolbar like the one in the image below. Once you&amp;rsquo;ve signed in, this icon will allow you to find passwords that have been saved in your vault.
-&lt;image class=&#34;&#34; src=&#34;http://everttimberg.io/images/family-tech/last-pass-toolbar-icon.png&#34; /&gt;&lt;/p&gt;
+&lt;image class=&#34;&#34; src=&#34;https://everttimberg.io/images/family-tech/last-pass-toolbar-icon.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -56,13 +56,13 @@ The case study I gave is airline tickes. Airline websites will store a cookie on
     
     <item>
       <title>Reflecting on Chart.js in 2016</title>
-      <link>http://everttimberg.io/post/new-year-2017/</link>
+      <link>https://everttimberg.io/post/new-year-2017/</link>
       <pubDate>Sat, 31 Dec 2016 18:45:47 -0500</pubDate>
       
-      <guid>http://everttimberg.io/post/new-year-2017/</guid>
+      <guid>https://everttimberg.io/post/new-year-2017/</guid>
       <description>
 
-&lt;script src=&#34;http://everttimberg.io/js/Chart.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://everttimberg.io/js/Chart.min.js&#34;&gt;&lt;/script&gt;
 
 &lt;p&gt;Chart.js has had an incredible last year. In April, we successfully launched v2.0 culminating a year and a half of hard work. We&amp;rsquo;ve had a number of smaller releases after that, each of which has helped build on the incredible interactivity that comes standard in v2. We also released our first new chart type in a long time; the horizontal bar chart. This was a long sought request, that fit in well with the work we did in v2.&lt;/p&gt;
 
@@ -129,10 +129,10 @@ Overall, 2017 is shaping up to be a great year for Chart.js. Have a safe and hap
     
     <item>
       <title>About this Site</title>
-      <link>http://everttimberg.io/post/welcome/</link>
+      <link>https://everttimberg.io/post/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/post/welcome/</guid>
+      <guid>https://everttimberg.io/post/welcome/</guid>
       <description>&lt;p&gt;Welcome to my personal site. I wrote the site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in Go. It&amp;rsquo;s been a great introduction to the Go template language. Hosting is done via static files published to Github pages.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Evert Timberg</title>
-    <link>http://everttimberg.io/</link>
+    <link>https://everttimberg.io/</link>
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 30 Apr 2017 20:49:05 -0400</lastBuildDate>
-    <atom:link href="http://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Password Management and Ad Blocking</title>
-      <link>http://everttimberg.io/post/family-tech/</link>
+      <link>https://everttimberg.io/post/family-tech/</link>
       <pubDate>Sun, 30 Apr 2017 20:49:05 -0400</pubDate>
       
-      <guid>http://everttimberg.io/post/family-tech/</guid>
+      <guid>https://everttimberg.io/post/family-tech/</guid>
       <description>
 
 &lt;p&gt;There are a number of tools that can make browsing safer and faster.&lt;/p&gt;
@@ -30,7 +30,7 @@ If you sign in to LastPass on another computer, all your passwords will be synce
 
 &lt;p&gt;&lt;br /&gt;
 Once you have LastPass installed, you&amp;rsquo;ll get a redicon in your toolbar like the one in the image below. Once you&amp;rsquo;ve signed in, this icon will allow you to find passwords that have been saved in your vault.
-&lt;image class=&#34;&#34; src=&#34;http://everttimberg.io/images/family-tech/last-pass-toolbar-icon.png&#34; /&gt;&lt;/p&gt;
+&lt;image class=&#34;&#34; src=&#34;https://everttimberg.io/images/family-tech/last-pass-toolbar-icon.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -56,13 +56,13 @@ The case study I gave is airline tickes. Airline websites will store a cookie on
     
     <item>
       <title>Reflecting on Chart.js in 2016</title>
-      <link>http://everttimberg.io/post/new-year-2017/</link>
+      <link>https://everttimberg.io/post/new-year-2017/</link>
       <pubDate>Sat, 31 Dec 2016 18:45:47 -0500</pubDate>
       
-      <guid>http://everttimberg.io/post/new-year-2017/</guid>
+      <guid>https://everttimberg.io/post/new-year-2017/</guid>
       <description>
 
-&lt;script src=&#34;http://everttimberg.io/js/Chart.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://everttimberg.io/js/Chart.min.js&#34;&gt;&lt;/script&gt;
 
 &lt;p&gt;Chart.js has had an incredible last year. In April, we successfully launched v2.0 culminating a year and a half of hard work. We&amp;rsquo;ve had a number of smaller releases after that, each of which has helped build on the incredible interactivity that comes standard in v2. We also released our first new chart type in a long time; the horizontal bar chart. This was a long sought request, that fit in well with the work we did in v2.&lt;/p&gt;
 
@@ -129,14 +129,14 @@ Overall, 2017 is shaping up to be a great year for Chart.js. Have a safe and hap
     
     <item>
       <title>Introduction to Chart.js</title>
-      <link>http://everttimberg.io/presentation/introduction-to-chartjs/</link>
+      <link>https://everttimberg.io/presentation/introduction-to-chartjs/</link>
       <pubDate>Sat, 21 Jan 2017 12:48:35 -0500</pubDate>
       
-      <guid>http://everttimberg.io/presentation/introduction-to-chartjs/</guid>
+      <guid>https://everttimberg.io/presentation/introduction-to-chartjs/</guid>
       <description>&lt;section&gt;
     &lt;h1&gt;Introduction to Chart.js&lt;/h1&gt;
     &lt;h3&gt;February 2nd, 2017&lt;/h3&gt;
-    &lt;img class=&#34;plain&#34; src=&#34;http://everttimberg.io/images/chartjs/chartjs-logo.svg&#34; style=&#34;background: transparent;&#34;&gt;&lt;/img&gt;
+    &lt;img class=&#34;plain&#34; src=&#34;https://everttimberg.io/images/chartjs/chartjs-logo.svg&#34; style=&#34;background: transparent;&#34;&gt;&lt;/img&gt;
 &lt;/section&gt;
 &lt;section&gt;
     &lt;style&gt;
@@ -588,83 +588,83 @@ chart.update();
     
     <item>
       <title>Exploring Toronto</title>
-      <link>http://everttimberg.io/album/exploring-toronto/</link>
+      <link>https://everttimberg.io/album/exploring-toronto/</link>
       <pubDate>Sun, 10 Apr 2016 16:37:15 -0400</pubDate>
       
-      <guid>http://everttimberg.io/album/exploring-toronto/</guid>
-      <description>&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/toronto1.png&#34;&gt;
+      <guid>https://everttimberg.io/album/exploring-toronto/</guid>
+      <description>&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/toronto1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/toronto1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/toronto1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/toronto2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/toronto2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/toronto2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/toronto2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/toronto3.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/toronto3.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/toronto3_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/toronto3_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/toronto4.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/toronto4.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/toronto4_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/toronto4_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/toronto5.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/toronto5.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/toronto5_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/toronto5_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/toronto6.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/toronto6.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/toronto6_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/toronto6_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/Luminato_2012_1.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/Luminato_2012_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/Luminato_2012_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/Luminato_2012_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/Luminato_2012_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/Luminato_2012_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/Luminato_2012_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/Luminato_2012_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/Luminato_2012_3.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/Luminato_2012_3.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/Luminato_2012_3_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/Luminato_2012_3_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/Luminato_2012_4.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/Luminato_2012_4.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/Luminato_2012_4_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/Luminato_2012_4_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/toronto/Luminato_2012_5.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/toronto/Luminato_2012_5.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/toronto/Luminato_2012_5_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/toronto/Luminato_2012_5_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
@@ -673,33 +673,33 @@ chart.update();
     
     <item>
       <title>About Me</title>
-      <link>http://everttimberg.io/about/</link>
+      <link>https://everttimberg.io/about/</link>
       <pubDate>Wed, 30 Mar 2016 18:54:01 -0400</pubDate>
       
-      <guid>http://everttimberg.io/about/</guid>
-      <description>&lt;p&gt;&lt;image class=&#34;highlight-image&#34; src=&#34;http://everttimberg.io/images/about_profile.png&#34; /&gt;
+      <guid>https://everttimberg.io/about/</guid>
+      <description>&lt;p&gt;&lt;image class=&#34;highlight-image&#34; src=&#34;https://everttimberg.io/images/about_profile.png&#34; /&gt;
 Hi, I&amp;rsquo;m &lt;strong&gt;Evert Timberg&lt;/strong&gt;. I&amp;rsquo;m a software developer living in Toronto, Canada.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
-I am currently working for National Instruments as a Staff Software Developer. I started at NI soon after graduating from the University of Toronto in 2013 with a BASc in Electrical Engineering.&lt;/p&gt;
+I am currently a Principal Architect at &lt;a href=&#34;https://www.opusonesolutions.com/&#34;&gt;Opus One Solutions&lt;/a&gt; where I get to combine my love of electrical engineering and software to help electrical utilities integrate renewable resources into the grid. At Opus One, I work primarily in Python and JavaScript to develop grid planning, simulation, and optimization software.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
-Initially I worked on &lt;a href=&#34;https://en.wikipedia.org/wiki/NI_Multisim&#34;&gt;Multisim&lt;/a&gt; which is primarily written in C++. I had a chance to work on some fairly old legacy code, including the Berkeley &lt;a href=&#34;https://en.wikipedia.org/wiki/SPICE&#34;&gt;SPICE&lt;/a&gt; engine.&lt;/p&gt;
+Prior to Opus One, I worked for National Instruments as a Staff Software Developer. I started at NI soon after graduating from the University of Toronto in 2013 with a BASc in Electrical Engineering. At National Instruments, I worked on &lt;a href=&#34;https://en.wikipedia.org/wiki/NI_Multisim&#34;&gt;Multisim and Ultiboard&lt;/a&gt; which are schematic capture, simulation, and layout tools for electronics design.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
 Since December of 2014, I have been a maintainer of &lt;a href=&#34;http://chartjs.org&#34;&gt;Chart.js&lt;/a&gt;. In that time I have written a lot of the improvements for the version 2 release including multiple axis support and the ability to create new scale types with relative ease. I am also the author of a number of extensions for Chart.js including &lt;a href=&#34;https://github.com/chartjs/Chart.Zoom.js&#34;&gt;Chart.Zoom.js&lt;/a&gt;, &lt;a href=&#34;https://github.com/chartjs/Chart.Annotation.js&#34;&gt;Chart.Annotation.js&lt;/a&gt;, and &lt;a href=&#34;https://github.com/chartjs/Chart.smith.js&#34;&gt;Chart.Smith.js&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
-To contact me, email me at evert [dot] timberg [at] gmail.com or send me an invitation to connect on social media.&lt;/p&gt;
+To contact me, email me at evert [at] everttimberg.io or send me an invitation to connect on social media.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>About this Site</title>
-      <link>http://everttimberg.io/post/welcome/</link>
+      <link>https://everttimberg.io/post/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/post/welcome/</guid>
+      <guid>https://everttimberg.io/post/welcome/</guid>
       <description>&lt;p&gt;Welcome to my personal site. I wrote the site using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a static site generator written in Go. It&amp;rsquo;s been a great introduction to the Go template language. Hosting is done via static files published to Github pages.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
@@ -712,10 +712,10 @@ I used &lt;a href=&#34;https://www.npmjs.com/package/gulp-image-resize&#34;&gt;g
     
     <item>
       <title>Chart.js</title>
-      <link>http://everttimberg.io/project/chartjs/</link>
+      <link>https://everttimberg.io/project/chartjs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/project/chartjs/</guid>
+      <guid>https://everttimberg.io/project/chartjs/</guid>
       <description>&lt;p&gt;Since late 2014, I have been involved with &lt;a href=&#34;http://www.chartjs.org&#34;&gt;Chart.js&lt;/a&gt;. I am currently, along with Tanner Linsley, one of the primary contributors and was responsible for a number of the big developments in version 2.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
@@ -761,19 +761,19 @@ var chartInstance = new Chart(ctx,
     
     <item>
       <title>RNA Binding Site Finder</title>
-      <link>http://everttimberg.io/app/rna/</link>
+      <link>https://everttimberg.io/app/rna/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/app/rna/</guid>
+      <guid>https://everttimberg.io/app/rna/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RNA Binding Site Finder</title>
-      <link>http://everttimberg.io/project/rna-binding-site-finder/</link>
+      <link>https://everttimberg.io/project/rna-binding-site-finder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/project/rna-binding-site-finder/</guid>
+      <guid>https://everttimberg.io/project/rna-binding-site-finder/</guid>
       <description>
 
 &lt;p&gt;This was a quick tool I wrote for a friend. It allows the user to search a sequence of RNA for locations that could potentially bind with the search sequence. It has options to allow for partial matches where only part of the string matches a location in the RNA sequence.&lt;/p&gt;
@@ -785,61 +785,61 @@ var chartInstance = new Chart(ctx,
 &lt;p&gt;By using the secondary structure configuration, it&amp;rsquo;s possible to correlate matches against locations that are single stranded. If secondary structures are added, they need to be added in a Vienna syntax. Matches are reported including the number of single stranded bases in the match.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
-You can try the app &lt;a href=&#34;http://everttimberg.io/app/rna/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+You can try the app &lt;a href=&#34;https://everttimberg.io/app/rna/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Spain 2013</title>
-      <link>http://everttimberg.io/album/spain/</link>
+      <link>https://everttimberg.io/album/spain/</link>
       <pubDate>Tue, 12 Apr 2016 21:44:00 -0400</pubDate>
       
-      <guid>http://everttimberg.io/album/spain/</guid>
-      <description>&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/Madrid_graffiti.png&#34;&gt;
+      <guid>https://everttimberg.io/album/spain/</guid>
+      <description>&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/Madrid_graffiti.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/Madrid_graffiti_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/Madrid_graffiti_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/graffiti_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/graffiti_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/graffiti_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/graffiti_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/night_1.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/night_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/night_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/night_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/night_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/night_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/night_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/night_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/museum_1.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/museum_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/museum_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/museum_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/art_1.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/art_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/art_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/art_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/spain/art_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/spain/art_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/spain/art_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/spain/art_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
@@ -848,10 +848,10 @@ You can try the app &lt;a href=&#34;http://everttimberg.io/app/rna/&#34;&gt;here
     
     <item>
       <title>Chart.js Zoom Plug-In</title>
-      <link>http://everttimberg.io/project/chart.zoom/</link>
+      <link>https://everttimberg.io/project/chart.zoom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/project/chart.zoom/</guid>
+      <guid>https://everttimberg.io/project/chart.zoom/</guid>
       <description>&lt;p&gt;In early May 2016, I wrote a &lt;a href=&#34;https://github.com/chartjs/Chart.Zoom.js&#34;&gt;Zoom and Pan plugin&lt;/a&gt; to work with the new plugin system introduced in Chart.js v2.1.0. The plugin is touch ready and allows the use of gestures, such as pinch, to zoom the chart. Take a look at the chart below and try it out!&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
@@ -938,69 +938,69 @@ var chartInstance = new Chart(ctx,
     
     <item>
       <title>Riomaggiore 2013</title>
-      <link>http://everttimberg.io/album/riomaggiore/</link>
+      <link>https://everttimberg.io/album/riomaggiore/</link>
       <pubDate>Tue, 12 Apr 2016 21:44:00 -0400</pubDate>
       
-      <guid>http://everttimberg.io/album/riomaggiore/</guid>
-      <description>&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_1.png&#34;&gt;
+      <guid>https://everttimberg.io/album/riomaggiore/</guid>
+      <description>&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_3.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_3.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_3_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_3_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_4.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_4.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_4_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_4_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_5.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_5.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_5_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_5_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_6.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_6.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_6_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_6_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_7.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_7.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_7_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_7_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_8.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_8.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_8_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_8_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_9.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_9.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/riomaggiore/riomaggiore_9_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/riomaggiore/riomaggiore_9_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
@@ -1009,10 +1009,10 @@ var chartInstance = new Chart(ctx,
     
     <item>
       <title>Smith Charts with Chart.js</title>
-      <link>http://everttimberg.io/project/chart.smith/</link>
+      <link>https://everttimberg.io/project/chart.smith/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/project/chart.smith/</guid>
+      <guid>https://everttimberg.io/project/chart.smith/</guid>
       <description>&lt;p&gt;Back when I was in university, I used Smith Charts all the time to visualize transmission line network matching. There aren&amp;rsquo;t many web ways of creating one, so I took a stab at it.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
@@ -1067,76 +1067,76 @@ var chartInstance = new Chart(ctx,
     
     <item>
       <title>Naples and Florence</title>
-      <link>http://everttimberg.io/album/Naples%20and%20Florence/</link>
+      <link>https://everttimberg.io/album/Naples%20and%20Florence/</link>
       <pubDate>Tue, 12 Apr 2016 21:44:00 -0400</pubDate>
       
-      <guid>http://everttimberg.io/album/Naples%20and%20Florence/</guid>
-      <description>&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_1.png&#34;&gt;
+      <guid>https://everttimberg.io/album/Naples%20and%20Florence/</guid>
+      <description>&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_3.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_3.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_3_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_3_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_4.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_4.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_4_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_4_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_5.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_5.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_5_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_5_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_6.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_6.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_6_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_6_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/florence_7.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/florence_7.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/florence_7_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/florence_7_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/naples_1.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/naples_1.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/naples_1_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/naples_1_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/naples_2.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/naples_2.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/naples_2_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/naples_2_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;
 
-&lt;a class=&#34;album-link&#34; href=&#34;http://everttimberg.io/images/naples_and_florence/naples_3.png&#34;&gt;
+&lt;a class=&#34;album-link&#34; href=&#34;https://everttimberg.io/images/naples_and_florence/naples_3.png&#34;&gt;
 	&lt;div class=&#34;album-image-container&#34;&gt;
-		&lt;image class=&#34;album-image&#34; src=&#34;http://everttimberg.io/images/naples_and_florence/naples_3_thumb.png&#34; /&gt;
+		&lt;image class=&#34;album-image&#34; src=&#34;https://everttimberg.io/images/naples_and_florence/naples_3_thumb.png&#34; /&gt;
 		
 	&lt;/div&gt;
 &lt;/a&gt;

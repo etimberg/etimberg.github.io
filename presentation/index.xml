@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Presentations on Evert Timberg</title>
-    <link>http://everttimberg.io/presentation/</link>
+    <link>https://everttimberg.io/presentation/</link>
     <description>Recent content in Presentations on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Jan 2017 12:48:35 -0500</lastBuildDate>
-    <atom:link href="http://everttimberg.io/presentation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://everttimberg.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Introduction to Chart.js</title>
-      <link>http://everttimberg.io/presentation/introduction-to-chartjs/</link>
+      <link>https://everttimberg.io/presentation/introduction-to-chartjs/</link>
       <pubDate>Sat, 21 Jan 2017 12:48:35 -0500</pubDate>
       
-      <guid>http://everttimberg.io/presentation/introduction-to-chartjs/</guid>
+      <guid>https://everttimberg.io/presentation/introduction-to-chartjs/</guid>
       <description>&lt;section&gt;
     &lt;h1&gt;Introduction to Chart.js&lt;/h1&gt;
     &lt;h3&gt;February 2nd, 2017&lt;/h3&gt;
-    &lt;img class=&#34;plain&#34; src=&#34;http://everttimberg.io/images/chartjs/chartjs-logo.svg&#34; style=&#34;background: transparent;&#34;&gt;&lt;/img&gt;
+    &lt;img class=&#34;plain&#34; src=&#34;https://everttimberg.io/images/chartjs/chartjs-logo.svg&#34; style=&#34;background: transparent;&#34;&gt;&lt;/img&gt;
 &lt;/section&gt;
 &lt;section&gt;
     &lt;style&gt;
