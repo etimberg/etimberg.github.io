@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://everttimberg.io/projects/chartjs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/projects/rna-binding-site-finder/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/photography/exploring-toronto/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/photography/spain-2013/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/photography/riomaggiore-2013/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/photography/naples-and-florence/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/photography/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/blog/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/blog/welcome/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/app/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/blog/python-profiling/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/app/rna/</loc>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/tags/hugo/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/tags/profiling/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/tags/python/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://everttimberg.io/tags/qcachegrind/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
