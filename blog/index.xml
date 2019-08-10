@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Evert Timberg</title>
-    <link>http://everttimberg.io/blog/</link>
+    <link>https://everttimberg.io/blog/</link>
     <description>Recent content in Posts on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://everttimberg.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://everttimberg.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About this Site</title>
-      <link>http://everttimberg.io/blog/welcome/</link>
+      <link>https://everttimberg.io/blog/welcome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/blog/welcome/</guid>
+      <guid>https://everttimberg.io/blog/welcome/</guid>
       <description>Welcome to my personal site. I wrote the site using Hugo, a static site generator written in Go. It&amp;rsquo;s been a great introduction to the Go template language. Hosting is done via static files published to Github pages. The theme for this site is based on a modified version of the Introduction theme.</description>
     </item>
     
     <item>
       <title>Profiling Python Code with QCacheGrid</title>
-      <link>http://everttimberg.io/blog/python-profiling/</link>
+      <link>https://everttimberg.io/blog/python-profiling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/blog/python-profiling/</guid>
+      <guid>https://everttimberg.io/blog/python-profiling/</guid>
       <description>Profiling is the first step to improving the performance of code. Suppose we want to profile the Python script below which is based on the example here. It prints out the first 20 Fibonacci numbers and is unoptimized to make the profile exaggerated.
 def fib(n):if n == 0:return 0elif n == 1:return 1else:return fib(n-1) + fib(n-2)def fib_seq(n):seq = [ ]if n &amp;gt; 0:seq.</description>
     </item>

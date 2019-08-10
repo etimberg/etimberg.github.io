@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Evert Timberg</title>
-    <link>http://everttimberg.io/projects/</link>
+    <link>https://everttimberg.io/projects/</link>
     <description>Recent content in Projects on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://everttimberg.io/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://everttimberg.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Chart.js</title>
-      <link>http://everttimberg.io/projects/chartjs/</link>
+      <link>https://everttimberg.io/projects/chartjs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/projects/chartjs/</guid>
+      <guid>https://everttimberg.io/projects/chartjs/</guid>
       <description>Since late 2014, I have been involved with Chart.js. I am currently a maintainer of the library and have helped it grow and mature.
 
 It&amp;rsquo;s been a great adventure, and my first experience with open-source development. It&amp;rsquo;s scary at times to think that my code gets so much use. Chart.js was also my first experience using the HTML 5 Canvas APIs, but it felt quite natural coming from C++ code that made use of Windows GDI APIs.</description>
@@ -23,10 +23,10 @@ It&amp;rsquo;s been a great adventure, and my first experience with open-source 
     
     <item>
       <title>RNA Binding Site App</title>
-      <link>http://everttimberg.io/projects/rna-binding-site-finder/</link>
+      <link>https://everttimberg.io/projects/rna-binding-site-finder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/projects/rna-binding-site-finder/</guid>
+      <guid>https://everttimberg.io/projects/rna-binding-site-finder/</guid>
       <description>This was a quick tool I wrote for my wife. It allows the user to search a sequence of RNA for locations that could potentially bind with the search sequence. It has options to allow for partial matches where only part of the string matches a location in the RNA sequence.
 
 Correlation with RNA Secondary Structure By using the secondary structure configuration, it&amp;rsquo;s possible to correlate matches against locations that are single stranded.</description>

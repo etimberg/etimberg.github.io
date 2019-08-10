@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>qcachegrind on Evert Timberg</title>
-    <link>http://everttimberg.io/tags/qcachegrind/</link>
+    <link>https://everttimberg.io/tags/qcachegrind/</link>
     <description>Recent content in qcachegrind on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://everttimberg.io/tags/qcachegrind/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://everttimberg.io/tags/qcachegrind/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Profiling Python Code with QCacheGrid</title>
-      <link>http://everttimberg.io/blog/python-profiling/</link>
+      <link>https://everttimberg.io/blog/python-profiling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://everttimberg.io/blog/python-profiling/</guid>
+      <guid>https://everttimberg.io/blog/python-profiling/</guid>
       <description>Profiling is the first step to improving the performance of code. Suppose we want to profile the Python script below which is based on the example here. It prints out the first 20 Fibonacci numbers and is unoptimized to make the profile exaggerated.
 def fib(n):if n == 0:return 0elif n == 1:return 1else:return fib(n-1) + fib(n-2)def fib_seq(n):seq = [ ]if n &amp;gt; 0:seq.</description>
     </item>
