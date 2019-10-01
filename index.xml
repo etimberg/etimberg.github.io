@@ -78,7 +78,7 @@ Correlation with RNA Secondary Structure By using the secondary structure config
     </item>
     
     <item>
-      <title>Profiling Python Code with QCacheGrid</title>
+      <title>Profiling Python Code with QCacheGrind</title>
       <link>https://everttimberg.io/blog/python-profiling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
