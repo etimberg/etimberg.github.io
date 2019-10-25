@@ -6,6 +6,7 @@
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 24 Oct 2019 20:06:03 -0400</lastBuildDate>
     
 	<atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -66,6 +67,16 @@ Correlation with RNA Secondary Structure By using the secondary structure config
       
       <guid>https://everttimberg.io/photography/naples-and-florence/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Self Documenting APIs with Flask and Swagger</title>
+      <link>https://everttimberg.io/blog/flask-api-spec/</link>
+      <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/blog/flask-api-spec/</guid>
+      <description>Flask is a simple Python framework for creating web applications. It can be used to create API servers in a microservices architecture. When doing so, it is helpful to provide API documentation that ships with your service. This post outlines a technique for shipping OpenAPI v3 documentation from your service while co-locating the documentation with the API implementation.
+Keeping the documentation with the route definition ensures that it is easy to update, updates can be clearly identified during code review, and it helps to onboard new developers to a project.</description>
     </item>
     
     <item>

@@ -36,6 +36,48 @@
   
   <url>
     <loc>https://everttimberg.io/blog/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/blog/flask-api-spec/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/apispec/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/open-api/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/python/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/swagger/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -53,21 +95,11 @@
   </url>
   
   <url>
-    <loc>https://everttimberg.io/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://everttimberg.io/blog/python-profiling/</loc>
   </url>
   
   <url>
     <loc>https://everttimberg.io/app/rna/</loc>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -77,11 +109,6 @@
   
   <url>
     <loc>https://everttimberg.io/tags/profiling/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/python/</loc>
     <priority>0</priority>
   </url>
   

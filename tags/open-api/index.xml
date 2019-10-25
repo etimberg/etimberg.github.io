@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Evert Timberg</title>
-    <link>https://everttimberg.io/tags/python/</link>
-    <description>Recent content in python on Evert Timberg</description>
+    <title>open-api on Evert Timberg</title>
+    <link>https://everttimberg.io/tags/open-api/</link>
+    <description>Recent content in open-api on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Oct 2019 20:06:03 -0400</lastBuildDate>
     
-	<atom:link href="https://everttimberg.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://everttimberg.io/tags/open-api/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>https://everttimberg.io/blog/flask-api-spec/</guid>
       <description>Flask is a simple Python framework for creating web applications. It can be used to create API servers in a microservices architecture. When doing so, it is helpful to provide API documentation that ships with your service. This post outlines a technique for shipping OpenAPI v3 documentation from your service while co-locating the documentation with the API implementation.
 Keeping the documentation with the route definition ensures that it is easy to update, updates can be clearly identified during code review, and it helps to onboard new developers to a project.</description>
-    </item>
-    
-    <item>
-      <title>Profiling Python Code with QCacheGrind</title>
-      <link>https://everttimberg.io/blog/python-profiling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://everttimberg.io/blog/python-profiling/</guid>
-      <description>Profiling is the first step to improving the performance of code. Suppose we want to profile the Python script below which is based on the example here. It prints out the first 20 Fibonacci numbers and is unoptimized to make the profile exaggerated.
-def fib(n):if n == 0:return 0elif n == 1:return 1else:return fib(n-1) + fib(n-2)def fib_seq(n):seq = [ ]if n &amp;gt; 0:seq.</description>
     </item>
     
   </channel>

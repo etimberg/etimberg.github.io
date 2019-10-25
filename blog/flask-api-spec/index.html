@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Evert Timberg, Software developer and architect in Toronto">
+<title>
+Self Documenting APIs with Flask and Swagger - Evert Timberg
+</title>
+
+
+
+        <meta property="og:title" content="Self Documenting APIs with Flask and Swagger - Evert Timberg" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Evert Timberg, Software developer and architect in Toronto"/>
+<meta property="og:url" content="https://everttimberg.io/blog/flask-api-spec/"/>
+<meta property="og:site_name" content="Evert Timberg"/>
+
+
+
+
+<meta property="og:image" content="https://everttimberg.io/home/bitmoji.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/fav.ico">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.1177f2f4aadeebd91700a0267440adbce57313096f26bfce538edcd9ac21a04f.css" integrity="sha256-EXfy9Kre69kXAKAmdECtvOVzEwlvJr/OU47c2awhoE8=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+    <h1 class="bold-title is-1">Posts</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">About Me</a>
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#photography">Photography</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://everttimberg.io/projects/">
+                  
+                  Project
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://everttimberg.io/blog/">
+                  
+                  Back to Posts
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+    <div class="container">
+        <h2 class="title is-1 top-pad strong-post-title">
+            <a href="https://everttimberg.io/blog/flask-api-spec/">Self Documenting APIs with Flask and Swagger</a>
+        </h2>
+        <div class="post-data">
+            Oct 24, 2019 |
+            3 minutes read
+        </div>
+        
+        <div class="blog-share">
+            Share this:
+            
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Self%20Documenting%20APIs%20with%20Flask%20and%20Swagger%20https%3a%2f%2feverttimberg.io%2fblog%2fflask-api-spec%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+            
+            
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feverttimberg.io%2fblog%2fflask-api-spec%2f"  onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fab fa-facebook-f"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+            
+            
+            <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2feverttimberg.io%2fblog%2fflask-api-spec%2f&amp;description=Self%20Documenting%20APIs%20with%20Flask%20and%20Swagger" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+                <i class="fab fa-pinterest-p"></i>
+                <span class="hidden">Pinterest</span>
+            </a>
+            
+            
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2feverttimberg.io%2fblog%2fflask-api-spec%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <i class="fab fa-google-plus-g"></i>
+                <span class="hidden">Google+</span>
+            </a>
+            
+        </div>
+        
+        
+        
+        <p>
+            Tags:
+            
+            <a href="/tags/python">python</a>,
+            
+            <a href="/tags/swagger">swagger</a>,
+            
+            <a href="/tags/apispec">apispec</a>,
+            
+            <a href="/tags/open-api">open-api</a>
+            
+        </p>
+        
+    </div>
+    
+    <div class="container markdown top-pad">
+        
+
+<p><a href="https://palletsprojects.com/p/flask/">Flask</a> is a simple Python framework for creating web applications. It can be used to create API servers in a microservices architecture. When doing so, it is helpful to provide API documentation that ships with your service. This post outlines a technique for shipping OpenAPI v3 documentation from your service while co-locating the documentation with the API implementation.</p>
+
+<p>Keeping the documentation with the route definition ensures that it is easy to update, updates can be clearly identified during code review, and it helps to onboard new developers to a project. There are a few Flask plugins that can acheive this, but the best is <a href="https://github.com/marshmallow-code/apispec">apispec</a>
+along with the associated <a href="https://github.com/marshmallow-code/apispec-webframeworks">Flask plugin</a>.
+The major advantages of <code>apispec</code> over other libraries are that it supports Marshmallow schemas directly and the OpenAPI Specification v3.</p>
+
+<h2 id="documenting-a-route">Documenting a Route</h2>
+
+<p>Documenting a route is as simple as providing a comment at the start of the Flask view function. In the example below, we have a simple web server that responds to a <code>/version</code> API with some JSON information regarding the service. The service also provides a <code>/spec</code> route that returns the OpenAPI documentation for the service.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">import</span> os
+
+<span style="color:#f92672">from</span> apispec <span style="color:#66d9ef">import</span> APISpec
+<span style="color:#f92672">from</span> apispec.ext.marshmallow <span style="color:#66d9ef">import</span> MarshmallowPlugin
+<span style="color:#f92672">from</span> apispec_webframeworks.flask <span style="color:#66d9ef">import</span> FlaskPlugin
+<span style="color:#f92672">from</span> flask <span style="color:#66d9ef">import</span> Flask, jsonify
+
+app <span style="color:#f92672">=</span> Flask(__name__)
+
+spec <span style="color:#f92672">=</span> APISpec(
+    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Swagger Example&#34;</span>,
+    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+    openapi_version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3.0.2&#34;</span>,
+    plugins<span style="color:#f92672">=</span>[FlaskPlugin(), MarshmallowPlugin()],
+)
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/version&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_info</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Get info on our server
+</span><span style="color:#e6db74">    ---
+</span><span style="color:#e6db74">    get:
+</span><span style="color:#e6db74">        description: Get the version information for our service
+</span><span style="color:#e6db74">        responses:
+</span><span style="color:#e6db74">            200:
+</span><span style="color:#e6db74">                content:
+</span><span style="color:#e6db74">                    application/json:
+</span><span style="color:#e6db74">                        schema:
+</span><span style="color:#e6db74">                            type: object
+</span><span style="color:#e6db74">                            properties:
+</span><span style="color:#e6db74">                                version:
+</span><span style="color:#e6db74">                                    type: string
+</span><span style="color:#e6db74">                                    description: Version number of our service
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> jsonify({
+        <span style="color:#e6db74">&#34;version&#34;</span>: os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;VERSION&#34;</span>),
+    })
+
+
+<span style="color:#75715e"># Need to register the path</span>
+<span style="color:#66d9ef">with</span> app<span style="color:#f92672">.</span>test_request_context():
+    spec<span style="color:#f92672">.</span>path(view<span style="color:#f92672">=</span>get_info)
+
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/spec&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_apispec</span>():
+    <span style="color:#66d9ef">return</span> jsonify(spec<span style="color:#f92672">.</span>to_dict())</code></pre></div>
+
+<p><br>
+Now, if we load up a swagger UI client and point it to our service we can see the definition for our API.</p>
+
+<p><img src="/img/swagger.png" alt="Displayed API Spec" /></p>
+
+<h2 id="integration-with-flask-blueprints">Integration with Flask Blueprints</h2>
+
+<p>As Flask applications start to get bigger, it is common to switch to using <a href="https://flask.palletsprojects.com/en/1.1.x/blueprints/">Blueprints</a> to help organize the code. Blueprints can be adapted to work with <code>apispec</code> using a derived class. The blueprint automatically loads the route into the <code>spec</code> object. There is a <a href="https://github.com/marshmallow-code/apispec-webframeworks/pull/27">pull request</a> to the <code>apispec-webframeworks</code> project to add a <code>DocumentedBlueprint</code> but in the meantime, one must copy the implementation to your project.</p>
+
+<p>To get around the need to pass the <code>APISpec</code> object to each instance of the Blueprint, you can partial the Blueprint constructor as shown below.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">from</span> functools <span style="color:#66d9ef">import</span> partial
+<span style="color:#f92672">from</span> document_blueprint <span style="color:#66d9ef">import</span> DocumentedBlueprint <span style="color:#66d9ef">as</span> RawBlueprint
+
+spec <span style="color:#f92672">=</span> APISpec(
+    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Swagger Example&#34;</span>,
+    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+    openapi_version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3.0.2&#34;</span>,
+    plugins<span style="color:#f92672">=</span>[FlaskPlugin(), MarshmallowPlugin()],
+)
+
+<span style="color:#75715e"># Use this DocumentedBlueprint to avoid needing to set the spec everywhere</span>
+DocumentedBlueprint <span style="color:#f92672">=</span> partial(RawBlueprint, spec<span style="color:#f92672">=</span>spec)</code></pre></div>
+
+<h2 id="use-with-webargs">Use with Webargs</h2>
+
+<p>The webargs project provides a more convenient way to use marshmallow than creating schema objects. To use it with apispec, the following helper can be used to create an apispec schema object that will appear in the Open API spec response.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_schema_from_web_args</span>(name: str, args: dict):
+    klass <span style="color:#f92672">=</span> Schema<span style="color:#f92672">.</span>from_dict(args)
+    spec<span style="color:#f92672">.</span>components<span style="color:#f92672">.</span>schema(name, schema<span style="color:#f92672">=</span>klass)</code></pre></div>
+
+<h2 id="custom-schemas">Custom Schemas</h2>
+
+<p>In addition to Marshmallow, it can be useful to define custom schemas using YAML rather than being forced to use Marshmallow objects. A simple helper makes this possible.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">from</span> yaml <span style="color:#66d9ef">import</span> safe_load
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_schema</span>(spec: APISpec, name: str, schema_str: str):
+    schema <span style="color:#f92672">=</span> safe_load(schema_str)
+    spec<span style="color:#f92672">.</span>schema(name, schema)</code></pre></div>
+
+    </div>
+    
+    
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        Copyright Evert Timberg - 2019
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://everttimberg.io/js/bundle.6de3a859f41baedd63d7df15926a1702a83288fecb19cc0b65f93add03a15db7.js" integrity="sha256-beOoWfQbrt1j198VkmoXAqgyiP7LGcwLZfk63QOhXbc="></script>
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

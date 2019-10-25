@@ -6,9 +6,46 @@
     <description>Recent content in Tags on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 24 Oct 2019 20:06:03 -0400</lastBuildDate>
     
 	<atom:link href="https://everttimberg.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apispec</title>
+      <link>https://everttimberg.io/tags/apispec/</link>
+      <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/apispec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-api</title>
+      <link>https://everttimberg.io/tags/open-api/</link>
+      <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/open-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://everttimberg.io/tags/python/</link>
+      <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swagger</title>
+      <link>https://everttimberg.io/tags/swagger/</link>
+      <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/swagger/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>
@@ -25,15 +62,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://everttimberg.io/tags/profiling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://everttimberg.io/tags/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://everttimberg.io/tags/python/</guid>
       <description></description>
     </item>
     
