@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Oct 2019 20:06:03 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 20:57:00 -0400</lastBuildDate>
     
 	<atom:link href="https://everttimberg.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>architecture</title>
+      <link>https://everttimberg.io/tags/architecture/</link>
+      <pubDate>Tue, 18 Feb 2020 20:57:00 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>circuitbreaker</title>
+      <link>https://everttimberg.io/tags/circuitbreaker/</link>
+      <pubDate>Tue, 18 Feb 2020 20:57:00 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/circuitbreaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservices</title>
+      <link>https://everttimberg.io/tags/microservices/</link>
+      <pubDate>Tue, 18 Feb 2020 20:57:00 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://everttimberg.io/tags/python/</link>
+      <pubDate>Tue, 18 Feb 2020 20:57:00 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>apispec</title>
@@ -26,15 +62,6 @@
       <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
       
       <guid>https://everttimberg.io/tags/open-api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://everttimberg.io/tags/python/</link>
-      <pubDate>Thu, 24 Oct 2019 20:06:03 -0400</pubDate>
-      
-      <guid>https://everttimberg.io/tags/python/</guid>
       <description></description>
     </item>
     
