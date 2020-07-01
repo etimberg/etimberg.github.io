@@ -36,24 +36,47 @@
   
   <url>
     <loc>https://everttimberg.io/blog/</loc>
-    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://everttimberg.io/blog/python-circuit-breaker/</loc>
-    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
+    <loc>https://everttimberg.io/blog/custom-react-hook-query-state/</loc>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://everttimberg.io/</loc>
-    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://everttimberg.io/tags/</loc>
-    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/hooks/</loc>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/javascript/</loc>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/react/</loc>
+    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/blog/python-circuit-breaker/</loc>
+    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
   </url>
   
   <url>
