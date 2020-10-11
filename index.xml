@@ -6,7 +6,7 @@
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2020 10:27:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2020 18:19:32 -0400</lastBuildDate>
     
 	<atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -67,6 +67,15 @@ Correlation with RNA Secondary Structure By using the secondary structure config
       
       <guid>https://everttimberg.io/photography/naples-and-florence/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Circular Gradients for the HTML5 Canvas</title>
+      <link>https://everttimberg.io/blog/js-circular-gradient/</link>
+      <pubDate>Sun, 11 Oct 2020 18:19:32 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/blog/js-circular-gradient/</guid>
+      <description>Circular gradients are commonly used in pie or doughnut charts to change the colour of segment as the angle around the center of the chart changes. In many non web platforms, the ability to generate these gradients is provided as part of the standard APIs. For example, Android provides a SweepGradient. In the browsers, only Linear and Radial gradients are provided. Thus, if we want to a circular gradient, we&amp;rsquo;ll need to create our own.</description>
     </item>
     
     <item>

@@ -36,7 +36,42 @@
   
   <url>
     <loc>https://everttimberg.io/blog/</loc>
-    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/blog/js-circular-gradient/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/canvas/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/javascript/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/tags/webgl/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -45,25 +80,7 @@
   </url>
   
   <url>
-    <loc>https://everttimberg.io/</loc>
-    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/</loc>
-    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://everttimberg.io/tags/hooks/</loc>
-    <lastmod>2020-07-01T10:27:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/javascript/</loc>
     <lastmod>2020-07-01T10:27:00-04:00</lastmod>
     <priority>0</priority>
   </url>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Evert Timberg, Software developer and architect in Toronto">
+<title>
+Circular Gradients for the HTML5 Canvas - Evert Timberg
+</title>
+
+
+
+        <meta property="og:title" content="Circular Gradients for the HTML5 Canvas - Evert Timberg" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Evert Timberg, Software developer and architect in Toronto"/>
+<meta property="og:url" content="https://everttimberg.io/blog/js-circular-gradient/"/>
+<meta property="og:site_name" content="Evert Timberg"/>
+
+
+
+
+<meta property="og:image" content="https://everttimberg.io/home/bitmoji.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/fav.ico">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.1177f2f4aadeebd91700a0267440adbce57313096f26bfce538edcd9ac21a04f.css" integrity="sha256-EXfy9Kre69kXAKAmdECtvOVzEwlvJr/OU47c2awhoE8=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+    <h1 class="bold-title is-1">Posts</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">About Me</a>
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#photography">Photography</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://everttimberg.io/projects/">
+                  
+                  Project
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://everttimberg.io/blog/">
+                  
+                  Back to Posts
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+    <div class="container">
+        <h2 class="title is-1 top-pad strong-post-title">
+            <a href="https://everttimberg.io/blog/js-circular-gradient/">Circular Gradients for the HTML5 Canvas</a>
+        </h2>
+        <div class="post-data">
+            Oct 11, 2020 |
+            5 minutes read
+        </div>
+        
+        <div class="blog-share">
+            Share this:
+            
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Circular%20Gradients%20for%20the%20HTML5%20Canvas%20https%3a%2f%2feverttimberg.io%2fblog%2fjs-circular-gradient%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+            
+            
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feverttimberg.io%2fblog%2fjs-circular-gradient%2f"  onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fab fa-facebook-f"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+            
+            
+            <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2feverttimberg.io%2fblog%2fjs-circular-gradient%2f&amp;description=Circular%20Gradients%20for%20the%20HTML5%20Canvas" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+                <i class="fab fa-pinterest-p"></i>
+                <span class="hidden">Pinterest</span>
+            </a>
+            
+            
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2feverttimberg.io%2fblog%2fjs-circular-gradient%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <i class="fab fa-google-plus-g"></i>
+                <span class="hidden">Google+</span>
+            </a>
+            
+        </div>
+        
+        
+        
+        <p>
+            Tags:
+            
+            <a href="/tags/javascript">javascript</a>,
+            
+            <a href="/tags/canvas">canvas</a>,
+            
+            <a href="/tags/webgl">webgl</a>
+            
+        </p>
+        
+    </div>
+    
+    <div class="container markdown top-pad">
+        
+
+<p>Circular gradients are commonly used in pie or doughnut charts to change the colour of segment as the angle around the center of the chart changes. In many non web platforms, the ability to generate these gradients is provided as part of the standard APIs. For example, Android provides a <a href="https://www.mit.edu/afs.new/sipb/project/android/docs//reference/android/graphics/SweepGradient.html">SweepGradient</a>. In the browsers, only <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createLinearGradient">Linear</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createRadialGradient">Radial</a> gradients are provided. Thus, if we want to a circular gradient, we&rsquo;ll need to create our own.</p>
+
+<p>Thanksfully, all modern browsers have <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a> implementations that we can combine with a <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern">CanvasPattern</a> to create our own gradients.</p>
+
+<p>All WebGL programs consist of two shaders: a vertex shader and a fragment shaders. These shaders are written in <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL</a> which has syntax similar to C. The vertex shader is used to project the input vertex coordinates onto the scene while the fragment shader is used to determine the colour at each point inside of a fill. For our use case, we&rsquo;ll do the entirety of our work in the fragment shader and the vertex shader will simply pass points through without transformation.</p>
+
+<h2 id="vertex-shader">Vertex Shader</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#66d9ef">attribute</span> <span style="color:#66d9ef">vec3</span> coordinates;
+ 
+<span style="color:#66d9ef">void</span> main(<span style="color:#66d9ef">void</span>) {
+    gl_Position <span style="color:#f92672">=</span> <span style="color:#66d9ef">vec4</span>(coordinates, <span style="color:#ae81ff">1.0</span>);
+}</code></pre></div>
+
+<h2 id="fragment-shader">Fragment Shader</h2>
+
+<p>The fragment shader is where the fun begins. Before I dive into the code, we first nede to define the problem. We want the colour to change as we rotate around the center of the canvas so we need to know where the center of the canvas is. We also need to know what colours we want to move between. To read these inputs, we first define for <code>uniform</code> variables in the fragment shader. When we put the program together, these will be supplied as inputs from JavaScript.</p>
+
+<p>The bulk of the work is then the calculation for <code>percent</code> which determines how far along the gradient we want to be. This number needs to be in the range <code>[0, 1]</code>. Since this value is related to the angle of the current point, relative to the center of canvas, the use of <code>atan</code> makes sense. <strong>Note</strong> GLSL&rsquo;s implementation of <code>atan2</code> is to call <code>atan</code> with two arguments. The angle computed from <code>atan</code> is then shifted into the range <code>[-2pi, 0]</code> and then normalized.</p>
+
+<p>The final step is to set the special <code>gl_FragColor</code> to the colour for the pixel. <code>mix</code> is a GLSL builtin that mixes the two input vectors in a linear fashion.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#75715e">// fragment shaders don&#39;t have a default precision so we need</span>
+<span style="color:#75715e">// to pick one. mediump is a good default</span>
+<span style="color:#66d9ef">precision</span> <span style="color:#66d9ef">mediump</span> <span style="color:#66d9ef">float</span>;
+  
+<span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">float</span> u_width;
+<span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">float</span> u_height;
+<span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec4</span> u_color1;
+<span style="color:#66d9ef">uniform</span> <span style="color:#66d9ef">vec4</span> u_color2;
+  
+<span style="color:#66d9ef">void</span> main(<span style="color:#66d9ef">void</span>) {
+    <span style="color:#66d9ef">vec2</span> xy <span style="color:#f92672">=</span> gl_FragCoord.xy;
+    <span style="color:#66d9ef">float</span> half_width <span style="color:#f92672">=</span> u_width <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>;
+    <span style="color:#66d9ef">float</span> half_height <span style="color:#f92672">=</span> u_height <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>;
+
+    <span style="color:#66d9ef">float</span> percent <span style="color:#f92672">=</span> (atan(xy[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> half_width, half_height <span style="color:#f92672">-</span> xy[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">3.14</span>) <span style="color:#f92672">/</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">6.28</span>;
+    gl_FragColor <span style="color:#f92672">=</span> mix(u_color1, u_color2, percent);
+}</code></pre></div>
+
+<h2 id="putting-it-alltogether">Putting it Alltogether</h2>
+
+<p>Now that we have both shaders written, we need to tie it together and render this on a canvas to test it out.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">vertices</span> <span style="color:#f92672">=</span> [
+    <span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>,
+    <span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>,
+    <span style="color:#ae81ff">1.0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>,
+    <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>
+];
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indices</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
+<span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">height</span>;
+<span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">width</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">gl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;webgl&#34;</span>);
+
+<span style="color:#75715e">// Create an empty buffer object to store vertex buffer
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">vertex_buffer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">createBuffer</span>();
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bindBuffer</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ARRAY_BUFFER</span>, <span style="color:#a6e22e">vertex_buffer</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bufferData</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ARRAY_BUFFER</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Float32Array</span>(<span style="color:#a6e22e">vertices</span>), <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">STATIC_DRAW</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bindBuffer</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ARRAY_BUFFER</span>, <span style="color:#66d9ef">null</span>);
+
+<span style="color:#75715e">// Create an empty buffer object to store Index buffer
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Index_Buffer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">createBuffer</span>();
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bindBuffer</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ELEMENT_ARRAY_BUFFER</span>, <span style="color:#a6e22e">Index_Buffer</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bufferData</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ELEMENT_ARRAY_BUFFER</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint16Array</span>(<span style="color:#a6e22e">indices</span>), <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">STATIC_DRAW</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bindBuffer</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ELEMENT_ARRAY_BUFFER</span>, <span style="color:#66d9ef">null</span>);
+
+<span style="color:#75715e">// Vertex shader source code
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">vertCode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`
+</span><span style="color:#e6db74">    attribute vec3 coordinates;
+</span><span style="color:#e6db74"> 
+</span><span style="color:#e6db74">    void main(void) {
+</span><span style="color:#e6db74">      gl_Position = vec4(coordinates, 1.0);
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">`</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">vertShader</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">createShader</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">VERTEX_SHADER</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">shaderSource</span>(<span style="color:#a6e22e">vertShader</span>, <span style="color:#a6e22e">vertCode</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">compileShader</span>(<span style="color:#a6e22e">vertShader</span>);
+
+<span style="color:#75715e">// Fragment shader
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fragCode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`
+</span><span style="color:#e6db74">    // fragment shaders don&#39;t have a default precision so we need
+</span><span style="color:#e6db74">    // to pick one. mediump is a good default
+</span><span style="color:#e6db74">    precision mediump float;
+</span><span style="color:#e6db74">  
+</span><span style="color:#e6db74">    uniform float u_width;
+</span><span style="color:#e6db74">    uniform float u_height;
+</span><span style="color:#e6db74">    uniform vec4 u_color1;
+</span><span style="color:#e6db74">    uniform vec4 u_color2;
+</span><span style="color:#e6db74">  
+</span><span style="color:#e6db74">    void main(void) {
+</span><span style="color:#e6db74">      vec2 st = gl_FragCoord.xy;
+</span><span style="color:#e6db74">      float half_width = u_width / 2.0;
+</span><span style="color:#e6db74">      float half_height = u_height / 2.0;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">      float percent = (atan(st[0] - half_width, half_height - st[1]) - 3.14) / -6.28;
+</span><span style="color:#e6db74">      gl_FragColor = mix(u_color1, u_color2, percent);
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">`</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fragShader</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">createShader</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">FRAGMENT_SHADER</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">shaderSource</span>(<span style="color:#a6e22e">fragShader</span>, <span style="color:#a6e22e">fragCode</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">compileShader</span>(<span style="color:#a6e22e">fragShader</span>);
+
+<span style="color:#75715e">// Create a shader program object to store
+</span><span style="color:#75715e">// the combined shader program
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">shaderProgram</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">createProgram</span>();
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">attachShader</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#a6e22e">vertShader</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">attachShader</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#a6e22e">fragShader</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">linkProgram</span>(<span style="color:#a6e22e">shaderProgram</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">useProgram</span>(<span style="color:#a6e22e">shaderProgram</span>);
+
+<span style="color:#75715e">// Bind vertex buffer object
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bindBuffer</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ARRAY_BUFFER</span>, <span style="color:#a6e22e">vertex_buffer</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">bindBuffer</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">ELEMENT_ARRAY_BUFFER</span>, <span style="color:#a6e22e">Index_Buffer</span>);
+
+<span style="color:#75715e">// Colors. vec4 [r, g, b, a]
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">color1Loc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">getUniformLocation</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#e6db74">&#34;u_color1&#34;</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">uniform4fv</span>(<span style="color:#a6e22e">color1Loc</span>, [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>]);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">color2Loc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">getUniformLocation</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#e6db74">&#34;u_color2&#34;</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">uniform4fv</span>(<span style="color:#a6e22e">color2Loc</span>, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>]);
+
+<span style="color:#75715e">// Width &amp; height
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">heightLoc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">getUniformLocation</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#e6db74">&#34;u_height&#34;</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">uniform1f</span>(<span style="color:#a6e22e">heightLoc</span>, <span style="color:#a6e22e">height</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">widthLoc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">getUniformLocation</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#e6db74">&#34;u_width&#34;</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">uniform1f</span>(<span style="color:#a6e22e">widthLoc</span>, <span style="color:#a6e22e">width</span>);
+
+<span style="color:#75715e">// Get the attribute location
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">coord</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">getAttribLocation</span>(<span style="color:#a6e22e">shaderProgram</span>, <span style="color:#e6db74">&#34;coordinates&#34;</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">vertexAttribPointer</span>(<span style="color:#a6e22e">coord</span>, <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">FLOAT</span>, <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">enableVertexAttribArray</span>(<span style="color:#a6e22e">coord</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">enable</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">DEPTH_TEST</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">clear</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">COLOR_BUFFER_BIT</span>);
+<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">viewport</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">height</span>);
+
+<span style="color:#75715e">// Draw the square
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">drawElements</span>(<span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">TRIANGLE_FAN</span>, <span style="color:#a6e22e">indices</span>.<span style="color:#a6e22e">length</span>, <span style="color:#a6e22e">gl</span>.<span style="color:#a6e22e">UNSIGNED_SHORT</span>, <span style="color:#ae81ff">0</span>);
+</code></pre></div>
+
+<p>Now that we have the gradient rendering, if we want to use it as a fill for a 2d context call, we can create the <code>CanvasPattern</code> from the existing canvas</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pattern</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">createPattern</span>(<span style="color:#a6e22e">canvas</span>, <span style="color:#e6db74">&#34;no-repeat&#34;</span>);
+<span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">fillStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pattern</span>;
+
+<span style="color:#75715e">// Use the 2d APIs here
+</span></code></pre></div>
+
+<p>A live version of this code is at <a href="https://jsfiddle.net/dt4gn6v7/">https://jsfiddle.net/dt4gn6v7/</a></p>
+
+    </div>
+    
+    
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        Copyright Evert Timberg - 2019
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://everttimberg.io/js/bundle.6de3a859f41baedd63d7df15926a1702a83288fecb19cc0b65f93add03a15db7.js" integrity="sha256-beOoWfQbrt1j198VkmoXAqgyiP7LGcwLZfk63QOhXbc="></script>
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
