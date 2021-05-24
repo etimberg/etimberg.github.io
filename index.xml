@@ -6,7 +6,7 @@
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2020 18:19:32 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 24 May 2021 10:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -67,6 +67,17 @@ Correlation with RNA Secondary Structure By using the secondary structure config
       
       <guid>https://everttimberg.io/photography/naples-and-florence/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Introduction to the HTML 5 Canvas</title>
+      <link>https://everttimberg.io/presentations/canvas-introduction/</link>
+      <pubDate>Mon, 24 May 2021 10:00:00 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/presentations/canvas-introduction/</guid>
+      <description>Canvas Rendering Adventures in Immediate Mode Graphics on the Web Evert Timberg
+June 2, 2021
+  What is the Canvas?  Bitmap drawing surface added in HTML5 Provides view for immediate mode (2d) and WebGL rendering    CSS Pixels vs Device Pixels   CSS Pixels: Famously complicated definition The reference pixel is the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm’s length.</description>
     </item>
     
     <item>

@@ -35,19 +35,29 @@
   </url>
   
   <url>
+    <loc>https://everttimberg.io/presentations/</loc>
+    <lastmod>2021-05-24T10:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://everttimberg.io/blog/</loc>
     <lastmod>2020-10-11T18:19:32-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://everttimberg.io/blog/js-circular-gradient/</loc>
-    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+    <loc>https://everttimberg.io/</loc>
+    <lastmod>2021-05-24T10:00:00-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://everttimberg.io/</loc>
+    <loc>https://everttimberg.io/presentations/canvas-introduction/</loc>
+    <lastmod>2021-05-24T10:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://everttimberg.io/blog/js-circular-gradient/</loc>
     <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
