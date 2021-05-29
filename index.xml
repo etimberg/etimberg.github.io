@@ -75,9 +75,7 @@ Correlation with RNA Secondary Structure By using the secondary structure config
       <pubDate>Mon, 24 May 2021 10:00:00 -0400</pubDate>
       
       <guid>https://everttimberg.io/presentations/canvas-introduction/</guid>
-      <description>Canvas Rendering Adventures in Immediate Mode Graphics on the Web Evert Timberg
-June 2, 2021
-  What is the Canvas?  Bitmap drawing surface added in HTML5 Provides view for immediate mode (2d) and WebGL rendering    CSS Pixels vs Device Pixels   CSS Pixels: Famously complicated definition The reference pixel is the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm’s length.</description>
+      <description>Introductory presentation to the HTML 5 Canvas 2D mode</description>
     </item>
     
     <item>
