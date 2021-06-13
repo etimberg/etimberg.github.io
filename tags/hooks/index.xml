@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hooks on Evert Timberg</title>
@@ -6,11 +6,7 @@
     <description>Recent content in hooks on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2020 10:27:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://everttimberg.io/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 01 Jul 2020 10:27:00 -0400</lastBuildDate><atom:link href="https://everttimberg.io/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Simple Custom React Hook to Keep State in Query String</title>
       <link>https://everttimberg.io/blog/custom-react-hook-query-state/</link>

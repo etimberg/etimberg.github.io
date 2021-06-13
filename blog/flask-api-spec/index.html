@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Evert Timberg, Software developer and architect in Toronto">
 <title>
-Self Documenting a P Is With Flask and Swagger - Evert Timberg
+Self Documenting Apis With Flask and Swagger - Evert Timberg
 </title>
 
 
@@ -40,7 +40,7 @@ Self Documenting a P Is With Flask and Swagger - Evert Timberg
 
 
 
-<link rel="stylesheet" href="/css/main.min.fdd6d88fe9efe327679f50ac6317d5e2f06fa45b4fb2882292282988bf20d35a.css" integrity="sha256-/dbYj&#43;nv4ydnn1CsYxfV4vBvpFtPsogikigpiL8g01o=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="/css/main.min.3679995ba0ed4b91edeef430fd34cce1e8b53c123f9993c4861941eee80b46b1.css" integrity="sha256-NnmZW6DtS5Ht7vQw/TTM4ei1PBI/mZPEhhlB7ugLRrE=" crossorigin="anonymous" media="screen">
 
 
 
@@ -234,108 +234,93 @@ Self Documenting a P Is With Flask and Swagger - Evert Timberg
 </div>
 
 <div class="container markdown top-pad">
-    
-
-<p><a href="https://palletsprojects.com/p/flask/">Flask</a> is a simple Python framework for creating web applications. It can be used to create API servers in a microservices architecture. When doing so, it is helpful to provide API documentation that ships with your service. This post outlines a technique for shipping OpenAPI v3 documentation from your service while co-locating the documentation with the API implementation.</p>
-
+    <p><a href="https://palletsprojects.com/p/flask/">Flask</a> is a simple Python framework for creating web applications. It can be used to create API servers in a microservices architecture. When doing so, it is helpful to provide API documentation that ships with your service. This post outlines a technique for shipping OpenAPI v3 documentation from your service while co-locating the documentation with the API implementation.</p>
 <p>Keeping the documentation with the route definition ensures that it is easy to update, updates can be clearly identified during code review, and it helps to onboard new developers to a project. There are a few Flask plugins that can acheive this, but the best is <a href="https://github.com/marshmallow-code/apispec">apispec</a>
 along with the associated <a href="https://github.com/marshmallow-code/apispec-webframeworks">Flask plugin</a>.
 The major advantages of <code>apispec</code> over other libraries are that it supports Marshmallow schemas directly and the OpenAPI Specification v3.</p>
 
-<h2 id="documenting-a-route">Documenting a Route</h2>
-
+<h2 id="documenting-a-route" class="anchor-link"><a href="#documenting-a-route">Documenting a Route</a></h2>
 <p>Documenting a route is as simple as providing a comment at the start of the Flask view function. In the example below, we have a simple web server that responds to a <code>/version</code> API with some JSON information regarding the service. The service also provides a <code>/spec</code> route that returns the OpenAPI documentation for the service.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">os</span>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">import</span> os
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">apispec</span> <span style="color:#007020;font-weight:bold">import</span> APISpec
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">apispec.ext.marshmallow</span> <span style="color:#007020;font-weight:bold">import</span> MarshmallowPlugin
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">apispec_webframeworks.flask</span> <span style="color:#007020;font-weight:bold">import</span> FlaskPlugin
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">flask</span> <span style="color:#007020;font-weight:bold">import</span> Flask, jsonify
 
-<span style="color:#f92672">from</span> apispec <span style="color:#66d9ef">import</span> APISpec
-<span style="color:#f92672">from</span> apispec.ext.marshmallow <span style="color:#66d9ef">import</span> MarshmallowPlugin
-<span style="color:#f92672">from</span> apispec_webframeworks.flask <span style="color:#66d9ef">import</span> FlaskPlugin
-<span style="color:#f92672">from</span> flask <span style="color:#66d9ef">import</span> Flask, jsonify
+app <span style="color:#666">=</span> Flask(__name__)
 
-app <span style="color:#f92672">=</span> Flask(__name__)
-
-spec <span style="color:#f92672">=</span> APISpec(
-    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Swagger Example&#34;</span>,
-    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span>,
-    openapi_version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3.0.2&#34;</span>,
-    plugins<span style="color:#f92672">=</span>[FlaskPlugin(), MarshmallowPlugin()],
+spec <span style="color:#666">=</span> APISpec(
+    title<span style="color:#666">=</span><span style="color:#4070a0">&#34;Swagger Example&#34;</span>,
+    version<span style="color:#666">=</span><span style="color:#4070a0">&#34;1.0.0&#34;</span>,
+    openapi_version<span style="color:#666">=</span><span style="color:#4070a0">&#34;3.0.2&#34;</span>,
+    plugins<span style="color:#666">=</span>[FlaskPlugin(), MarshmallowPlugin()],
 )
 
-<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/version&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_info</span>():
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    Get info on our server
-</span><span style="color:#e6db74">    ---
-</span><span style="color:#e6db74">    get:
-</span><span style="color:#e6db74">        description: Get the version information for our service
-</span><span style="color:#e6db74">        responses:
-</span><span style="color:#e6db74">            200:
-</span><span style="color:#e6db74">                content:
-</span><span style="color:#e6db74">                    application/json:
-</span><span style="color:#e6db74">                        schema:
-</span><span style="color:#e6db74">                            type: object
-</span><span style="color:#e6db74">                            properties:
-</span><span style="color:#e6db74">                                version:
-</span><span style="color:#e6db74">                                    type: string
-</span><span style="color:#e6db74">                                    description: Version number of our service
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#66d9ef">return</span> jsonify({
-        <span style="color:#e6db74">&#34;version&#34;</span>: os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;VERSION&#34;</span>),
+<span style="color:#555;font-weight:bold">@app.route</span>(<span style="color:#4070a0">&#34;/version&#34;</span>)
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_info</span>():
+    <span style="color:#4070a0">&#34;&#34;&#34;
+</span><span style="color:#4070a0">    Get info on our server
+</span><span style="color:#4070a0">    ---
+</span><span style="color:#4070a0">    get:
+</span><span style="color:#4070a0">        description: Get the version information for our service
+</span><span style="color:#4070a0">        responses:
+</span><span style="color:#4070a0">            200:
+</span><span style="color:#4070a0">                content:
+</span><span style="color:#4070a0">                    application/json:
+</span><span style="color:#4070a0">                        schema:
+</span><span style="color:#4070a0">                            type: object
+</span><span style="color:#4070a0">                            properties:
+</span><span style="color:#4070a0">                                version:
+</span><span style="color:#4070a0">                                    type: string
+</span><span style="color:#4070a0">                                    description: Version number of our service
+</span><span style="color:#4070a0">    &#34;&#34;&#34;</span>
+    <span style="color:#007020;font-weight:bold">return</span> jsonify({
+        <span style="color:#4070a0">&#34;version&#34;</span>: os<span style="color:#666">.</span>environ<span style="color:#666">.</span>get(<span style="color:#4070a0">&#34;VERSION&#34;</span>),
     })
 
 
-<span style="color:#75715e"># Need to register the path</span>
-<span style="color:#66d9ef">with</span> app<span style="color:#f92672">.</span>test_request_context():
-    spec<span style="color:#f92672">.</span>path(view<span style="color:#f92672">=</span>get_info)
+<span style="color:#60a0b0;font-style:italic"># Need to register the path</span>
+<span style="color:#007020;font-weight:bold">with</span> app<span style="color:#666">.</span>test_request_context():
+    spec<span style="color:#666">.</span>path(view<span style="color:#666">=</span>get_info)
 
 
-<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/spec&#34;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_apispec</span>():
-    <span style="color:#66d9ef">return</span> jsonify(spec<span style="color:#f92672">.</span>to_dict())</code></pre></div>
+<span style="color:#555;font-weight:bold">@app.route</span>(<span style="color:#4070a0">&#34;/spec&#34;</span>)
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_apispec</span>():
+    <span style="color:#007020;font-weight:bold">return</span> jsonify(spec<span style="color:#666">.</span>to_dict())
+</code></pre></div><p>Now, if we load up a swagger UI client and point it to our service we can see the definition for our API.</p>
+<p><img src="/img/swagger.png" alt="Displayed API Spec"></p>
 
-<p><br>
-Now, if we load up a swagger UI client and point it to our service we can see the definition for our API.</p>
-
-<p><img src="/img/swagger.png" alt="Displayed API Spec" /></p>
-
-<h2 id="integration-with-flask-blueprints">Integration with Flask Blueprints</h2>
-
+<h2 id="integration-with-flask-blueprints" class="anchor-link"><a href="#integration-with-flask-blueprints">Integration with Flask Blueprints</a></h2>
 <p>As Flask applications start to get bigger, it is common to switch to using <a href="https://flask.palletsprojects.com/en/1.1.x/blueprints/">Blueprints</a> to help organize the code. Blueprints can be adapted to work with <code>apispec</code> using a derived class. The blueprint automatically loads the route into the <code>spec</code> object. There is a <a href="https://github.com/marshmallow-code/apispec-webframeworks/pull/27">pull request</a> to the <code>apispec-webframeworks</code> project to add a <code>DocumentedBlueprint</code> but in the meantime, one must copy the implementation to your project.</p>
-
 <p>To get around the need to pass the <code>APISpec</code> object to each instance of the Blueprint, you can partial the Blueprint constructor as shown below.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">functools</span> <span style="color:#007020;font-weight:bold">import</span> partial
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">document_blueprint</span> <span style="color:#007020;font-weight:bold">import</span> DocumentedBlueprint <span style="color:#007020;font-weight:bold">as</span> RawBlueprint
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">from</span> functools <span style="color:#66d9ef">import</span> partial
-<span style="color:#f92672">from</span> document_blueprint <span style="color:#66d9ef">import</span> DocumentedBlueprint <span style="color:#66d9ef">as</span> RawBlueprint
-
-spec <span style="color:#f92672">=</span> APISpec(
-    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Swagger Example&#34;</span>,
-    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span>,
-    openapi_version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3.0.2&#34;</span>,
-    plugins<span style="color:#f92672">=</span>[FlaskPlugin(), MarshmallowPlugin()],
+spec <span style="color:#666">=</span> APISpec(
+    title<span style="color:#666">=</span><span style="color:#4070a0">&#34;Swagger Example&#34;</span>,
+    version<span style="color:#666">=</span><span style="color:#4070a0">&#34;1.0.0&#34;</span>,
+    openapi_version<span style="color:#666">=</span><span style="color:#4070a0">&#34;3.0.2&#34;</span>,
+    plugins<span style="color:#666">=</span>[FlaskPlugin(), MarshmallowPlugin()],
 )
 
-<span style="color:#75715e"># Use this DocumentedBlueprint to avoid needing to set the spec everywhere</span>
-DocumentedBlueprint <span style="color:#f92672">=</span> partial(RawBlueprint, spec<span style="color:#f92672">=</span>spec)</code></pre></div>
-
-<h2 id="use-with-webargs">Use with Webargs</h2>
-
+<span style="color:#60a0b0;font-style:italic"># Use this DocumentedBlueprint to avoid needing to set the spec everywhere</span>
+DocumentedBlueprint <span style="color:#666">=</span> partial(RawBlueprint, spec<span style="color:#666">=</span>spec)
+</code></pre></div>
+<h2 id="use-with-webargs" class="anchor-link"><a href="#use-with-webargs">Use with Webargs</a></h2>
 <p>The webargs project provides a more convenient way to use marshmallow than creating schema objects. To use it with apispec, the following helper can be used to create an apispec schema object that will appear in the Open API spec response.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_schema_from_web_args</span>(name: str, args: dict):
-    klass <span style="color:#f92672">=</span> Schema<span style="color:#f92672">.</span>from_dict(args)
-    spec<span style="color:#f92672">.</span>components<span style="color:#f92672">.</span>schema(name, schema<span style="color:#f92672">=</span>klass)</code></pre></div>
-
-<h2 id="custom-schemas">Custom Schemas</h2>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">create_schema_from_web_args</span>(name: <span style="color:#007020">str</span>, args: <span style="color:#007020">dict</span>):
+    klass <span style="color:#666">=</span> Schema<span style="color:#666">.</span>from_dict(args)
+    spec<span style="color:#666">.</span>components<span style="color:#666">.</span>schema(name, schema<span style="color:#666">=</span>klass)
+</code></pre></div>
+<h2 id="custom-schemas" class="anchor-link"><a href="#custom-schemas">Custom Schemas</a></h2>
 <p>In addition to Marshmallow, it can be useful to define custom schemas using YAML rather than being forced to use Marshmallow objects. A simple helper makes this possible.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">yaml</span> <span style="color:#007020;font-weight:bold">import</span> safe_load
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">from</span> yaml <span style="color:#66d9ef">import</span> safe_load
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_schema</span>(spec: APISpec, name: str, schema_str: str):
-    schema <span style="color:#f92672">=</span> safe_load(schema_str)
-    spec<span style="color:#f92672">.</span>schema(name, schema)</code></pre></div>
-
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">add_schema</span>(spec: APISpec, name: <span style="color:#007020">str</span>, schema_str: <span style="color:#007020">str</span>):
+    schema <span style="color:#666">=</span> safe_load(schema_str)
+    spec<span style="color:#666">.</span>schema(name, schema)
+</code></pre></div>
 </div>
 
 
@@ -371,7 +356,7 @@ DocumentedBlueprint <span style="color:#f92672">=</span> partial(RawBlueprint, s
         
 
 
-<script src="https://everttimberg.io/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://everttimberg.io/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 

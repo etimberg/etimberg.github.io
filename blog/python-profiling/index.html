@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Evert Timberg, Software developer and architect in Toronto">
 <title>
-Profiling Python Code With Q Cache Grind - Evert Timberg
+Profiling Python Code With Qcache Grind - Evert Timberg
 </title>
 
 
@@ -40,7 +40,7 @@ Profiling Python Code With Q Cache Grind - Evert Timberg
 
 
 
-<link rel="stylesheet" href="/css/main.min.fdd6d88fe9efe327679f50ac6317d5e2f06fa45b4fb2882292282988bf20d35a.css" integrity="sha256-/dbYj&#43;nv4ydnn1CsYxfV4vBvpFtPsogikigpiL8g01o=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="/css/main.min.3679995ba0ed4b91edeef430fd34cce1e8b53c123f9993c4861941eee80b46b1.css" integrity="sha256-NnmZW6DtS5Ht7vQw/TTM4ei1PBI/mZPEhhlB7ugLRrE=" crossorigin="anonymous" media="screen">
 
 
 
@@ -226,47 +226,38 @@ Profiling Python Code With Q Cache Grind - Evert Timberg
 
 <div class="container markdown top-pad">
     <p>Profiling is the first step to improving the performance of code. Suppose we want to profile the Python script below which is based on the example <a href="https://pymotw.com/3/profile/#run">here</a>. It prints out the first 20 Fibonacci numbers and is unoptimized to make the profile exaggerated.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">fib</span>(n):
+    <span style="color:#007020;font-weight:bold">if</span> n <span style="color:#666">==</span> <span style="color:#40a070">0</span>:
+        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>
+    <span style="color:#007020;font-weight:bold">elif</span> n <span style="color:#666">==</span> <span style="color:#40a070">1</span>:
+        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span>
+    <span style="color:#007020;font-weight:bold">else</span>:
+        <span style="color:#007020;font-weight:bold">return</span> fib(n<span style="color:#666">-</span><span style="color:#40a070">1</span>) <span style="color:#666">+</span> fib(n<span style="color:#666">-</span><span style="color:#40a070">2</span>)
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fib</span>(n):
-    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">elif</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span>:
-        <span style="color:#66d9ef">return</span> fib(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fib(n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">fib_seq</span>(n):
+    seq <span style="color:#666">=</span> [ ]
+    <span style="color:#007020;font-weight:bold">if</span> n <span style="color:#666">&gt;</span> <span style="color:#40a070">0</span>:
+        seq<span style="color:#666">.</span>extend(fib_seq(n<span style="color:#666">-</span><span style="color:#40a070">1</span>))
+    seq<span style="color:#666">.</span>append(fib(n))
+    <span style="color:#007020;font-weight:bold">return</span> seq
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fib_seq</span>(n):
-    seq <span style="color:#f92672">=</span> [ ]
-    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
-        seq<span style="color:#f92672">.</span>extend(fib_seq(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
-    seq<span style="color:#f92672">.</span>append(fib(n))
-    <span style="color:#66d9ef">return</span> seq
+<span style="color:#007020;font-weight:bold">print</span>(fib_seq(<span style="color:#40a070">20</span>))
+</code></pre></div><p>To generate a profile of the script, we can run the module via <code>cProfile</code>.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -m cProfile -o profile.out fibonacci.py
+</code></pre></div><p>This will generate a profile of the runtime of <code>fibonacci.py</code> and save it to the <code>profile.out</code> file. Now we need to translate the profile into a format that <code>QCacheGrind</code> can read. The bash script below was written by a colleague of mine and will do that conversion and launch QCacheGrind. <a href="https://pypi.org/project/pyprof2calltree/">pyprof2calltree</a> is needed for this script to run and it can be installed via <code>pip install pyprof2calltree</code>.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#007020">#!/bin/bash
+</span><span style="color:#007020"></span>
+<span style="color:#bb60d5">PROF_FILE</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>basename <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$1</span><span style="color:#4070a0">&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+<span style="color:#bb60d5">PROF_DIR</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>dirname <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$1</span><span style="color:#4070a0">&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+<span style="color:#007020">echo</span> <span style="color:#bb60d5">$PROF_DIR</span>
+<span style="color:#bb60d5">PROF_DIR</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">PROF_DIR</span><span style="color:#007020;font-weight:bold">:-</span>.<span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">&#34;</span>
+<span style="color:#bb60d5">CACHEGRIND_FILE</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;callgrind-</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">PROF_FILE</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">&#34;</span>
 
-print(fib_seq(<span style="color:#ae81ff">20</span>))</code></pre></div>
-
-<p>To generate a profile of the script, we can run the module via <code>cProfile</code>.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -m cProfile -o profile.out fibonacci.py</code></pre></div>
-
-<p>This will generate a profile of the runtime of <code>fibonacci.py</code> and save it to the <code>profile.out</code> file. Now we need to translate the profile into a format that <code>QCacheGrind</code> can read. The bash script below was written by a colleague of mine and will do that conversion and launch QCacheGrind. <a href="https://pypi.org/project/pyprof2calltree/">pyprof2calltree</a> is needed for this script to run and it can be installed via <code>pip install pyprof2calltree</code>.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-PROF_FILE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-PROF_DIR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-echo $PROF_DIR
-PROF_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROF_DIR<span style="color:#66d9ef">:-</span>.<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-CACHEGRIND_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callgrind-</span><span style="color:#e6db74">${</span>PROF_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-
-pyprof2calltree -i <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROF_DIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>PROF_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> -o <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROF_DIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>CACHEGRIND_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-qcachegrind <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROF_DIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>CACHEGRIND_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-
-<p>This script takes a single argument which is the output of the previous step.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./profile profile.out</code></pre></div>
-
-<p><img src="/img/qcachegrind.png" alt="QCacheGrind Profile" /></p>
-
+pyprof2calltree -i <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">PROF_DIR</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">/</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">PROF_FILE</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">&#34;</span> -o <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">PROF_DIR</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">/</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">CACHEGRIND_FILE</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">&#34;</span>
+qcachegrind <span style="color:#4070a0">&#34;</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">PROF_DIR</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">/</span><span style="color:#70a0d0;font-style:italic">${</span><span style="color:#bb60d5">CACHEGRIND_FILE</span><span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">&#34;</span>
+</code></pre></div><p>This script takes a single argument which is the output of the previous step.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./profile profile.out
+</code></pre></div><p><img src="/img/qcachegrind.png" alt="QCacheGrind Profile"></p>
 <p>And that&rsquo;s all there is to it. Overall, QCacheGrid is a very useful tool for finding bottlenecks and performance issues and this simple script nicely ties it into Python.</p>
 
 </div>
@@ -304,7 +295,7 @@ qcachegrind <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">
         
 
 
-<script src="https://everttimberg.io/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://everttimberg.io/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 

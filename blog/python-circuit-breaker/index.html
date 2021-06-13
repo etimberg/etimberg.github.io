@@ -40,7 +40,7 @@ Circuit Breakers in Python - Evert Timberg
 
 
 
-<link rel="stylesheet" href="/css/main.min.fdd6d88fe9efe327679f50ac6317d5e2f06fa45b4fb2882292282988bf20d35a.css" integrity="sha256-/dbYj&#43;nv4ydnn1CsYxfV4vBvpFtPsogikigpiL8g01o=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="/css/main.min.3679995ba0ed4b91edeef430fd34cce1e8b53c123f9993c4861941eee80b46b1.css" integrity="sha256-NnmZW6DtS5Ht7vQw/TTM4ei1PBI/mZPEhhlB7ugLRrE=" crossorigin="anonymous" media="screen">
 
 
 
@@ -234,67 +234,49 @@ Circuit Breakers in Python - Evert Timberg
 </div>
 
 <div class="container markdown top-pad">
-    
-
-<p>The <a href="https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern">Circuit Breaker pattern</a> is commonly used in microservice architectures to fail quickly when an external service is down. This prevents a single service from bringing down the entire system and allows functionality to gracefully degrade.</p>
-
+    <p>The <a href="https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern">Circuit Breaker pattern</a> is commonly used in microservice architectures to fail quickly when an external service is down. This prevents a single service from bringing down the entire system and allows functionality to gracefully degrade.</p>
 <p>I spent part of the last weekend building my own <a href="https://pypi.org/project/pycircuitbreaker/">version</a> of a circuit breaker. There are already <a href="https://pypi.org/search/?q=circuit+breaker">many</a> existing implementations in Python, however there were a few things I wanted in a circuit breaker implementation that I couldn&rsquo;t seem to find. First, I wanted to detect errors in return values without raising exceptions and second I wanted to experiment with different strategies for determining the breaker status.</p>
 
-<h2 id="return-value-error-detection">Return Value Error Detection</h2>
-
+<h2 id="return-value-error-detection" class="anchor-link"><a href="#return-value-error-detection">Return Value Error Detection</a></h2>
 <p>I had a API gateway, written in Python, that passed requests off to the appropriate backend service. The key to any reasonable performance and memory usage is that the upstream responses are streamed back to the client rather than being read into memory and then resent.</p>
-
-<p><img src="/img/proxy_service.png" alt="Displayed API Spec" /></p>
-
+<p><img src="/img/proxy_service.png" alt="Displayed API Spec"></p>
 <p>The API gateway used the <a href="https://requests.readthedocs.io/en/master/">requests</a> library and so an easy way to integrate it with an existing circuit breaker implementation would be to call <code>raise_for_status()</code> and catch the appropriate errors. However, this is not as straightforward as it may seem. When an upstream service returns a 4xx error code, it usually also includes some kind of message to the client to help them solve the error. For example, when a POST API fails to validate a JSON body, the 400 response will include a human readable message indicating what the error was. The API gateway needs to continue to return that message which means that exceptions for 4xx responses need to be caught, the response read into memory, and then returned.</p>
-
 <p>There is a better way to solve this specific case that I built into <code>pycircuitbreaker</code>. The <code>circuit</code> decorator is able to take an optional <code>detect_error</code> parameter than can inspect the return value and determine if it is an error. This makes it easy to integrate with return-oriented programming, and while slightly less pythonic, allows seemless integration with the codebase I was working on.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pycircuitbreaker</span> <span style="color:#007020;font-weight:bold">import</span> circuit
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">from</span> pycircuitbreaker <span style="color:#66d9ef">import</span> circuit
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">detect_500</span>(response) <span style="color:#666">-&gt;</span> <span style="color:#007020">bool</span>:
+    <span style="color:#007020;font-weight:bold">return</span> response<span style="color:#666">.</span>status_code <span style="color:#666">==</span> <span style="color:#40a070">500</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">detect_500</span>(response) <span style="color:#f92672">-&gt;</span> bool:
-    <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">500</span>
-
-<span style="color:#a6e22e">@circuit</span>(detect_error<span style="color:#f92672">=</span>detect_500)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
-    response <span style="color:#f92672">=</span> external_call()
-    <span style="color:#66d9ef">return</span> response</code></pre></div>
-
-<h2 id="configurable-breaker-status-detection">Configurable Breaker Status Detection</h2>
-
+<span style="color:#555;font-weight:bold">@circuit</span>(detect_error<span style="color:#666">=</span>detect_500)
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">request</span>():
+    response <span style="color:#666">=</span> external_call()
+    <span style="color:#007020;font-weight:bold">return</span> response
+</code></pre></div>
+<h2 id="configurable-breaker-status-detection" class="anchor-link"><a href="#configurable-breaker-status-detection">Configurable Breaker Status Detection</a></h2>
 <p>Most circuit breaker implementations operate such that a sequential series of errors is required for the breaker to open. If the threshold is set to <code>5</code>, then once <code>5</code> errors have occured in a row the breaker opens. However, if the breaker starts closed, sees 4 errors and then 1 success, the breaker loses it&rsquo;s memory and resets the error counter to 0.</p>
-
 <p>When the upstream service the breaker is protecting is completely down and all requests fail, this strategy poses no problem. The breaker will quickly detect the errors and open allowing calls to the service to quickly fail.</p>
-
-<p>But, if the service is degraded such that only <sup>1</sup>&frasl;<sub>5</sub> requests go through, there is potential that the breaker will never open. If the breaker sees the following pattern it will never open and we will not see any benefits to our system.</p>
-
+<p>But, if the service is degraded such that only 1/5 requests go through, there is potential that the breaker will never open. If the breaker sees the following pattern it will never open and we will not see any benefits to our system.</p>
 <ul>
 <li>4 errors</li>
 <li>1 success</li>
 <li>4 errors</li>
 <li>1 success</li>
 </ul>
-
 <p>There is a simple fix that can handle this case. Rather than allowing a single success to reset the error count, successful requests decrement the error count subject to a minimum of 0.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">on_success</span>(self):
+    self<span style="color:#666">.</span>error_count <span style="color:#666">=</span> <span style="color:#007020">max</span>(<span style="color:#40a070">0</span>, self<span style="color:#666">.</span>error_count <span style="color:#666">-</span> <span style="color:#40a070">1</span>)
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_success</span>(self):
-    self<span style="color:#f92672">.</span>error_count <span style="color:#f92672">=</span> max(<span style="color:#ae81ff">0</span>, self<span style="color:#f92672">.</span>error_count <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_error</span>(self):
-    self<span style="color:#f92672">.</span>error_count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span></code></pre></div>
-
-<p>In the request pattern above, the breaker will function as follows:</p>
-
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">on_error</span>(self):
+    self<span style="color:#666">.</span>error_count <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
+</code></pre></div><p>In the request pattern above, the breaker will function as follows:</p>
 <ul>
 <li>4 sequential errors increments the count to 4</li>
 <li>1 success decrements the count to 3</li>
 <li>2 errors set the count to 5 and the breaker opens</li>
 </ul>
-
 <p>This allows the breaker to easily detect degraded external services without much computational overhead.</p>
 
-<h2 id="next-steps">Next Steps</h2>
-
+<h2 id="next-steps" class="anchor-link"><a href="#next-steps">Next Steps</a></h2>
 <p>Going forward I want to expand <code>pycircuitbreaker</code> to support more complex detection and state management. At present, all of the breaker state is stored in memory which, while simple, does have downsides in multiprocess environments as extra failing requests will go through until the breakers in all processes open. I want to investigate using Redis to back the breaker state and allow sharing across processes &amp; services.</p>
 
 </div>
@@ -332,7 +314,7 @@ Circuit Breakers in Python - Evert Timberg
         
 
 
-<script src="https://everttimberg.io/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://everttimberg.io/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 

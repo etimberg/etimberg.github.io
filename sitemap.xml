@@ -1,193 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://everttimberg.io/projects/chartjs/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/projects/rna-binding-site-finder/</loc>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/photography/exploring-toronto/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/projects/</loc>
-  </url>
-  
-  <url>
+    <lastmod>2021-06-13T11:54:06-04:00</lastmod>
+  </url><url>
+    <loc>https://everttimberg.io/photography/exploring-toronto/</loc>
+  </url><url>
     <loc>https://everttimberg.io/photography/spain-2013/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/photography/riomaggiore-2013/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/photography/naples-and-florence/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/photography/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/presentations/</loc>
     <lastmod>2021-05-24T10:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/blog/</loc>
     <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/</loc>
-    <lastmod>2021-05-24T10:00:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2021-06-13T11:54:06-04:00</lastmod>
+  </url><url>
+    <loc>https://everttimberg.io/projects/vaccine-ontario/</loc>
+    <lastmod>2021-06-13T11:54:06-04:00</lastmod>
+  </url><url>
     <loc>https://everttimberg.io/presentations/canvas-introduction/</loc>
     <lastmod>2021-05-24T10:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/blog/js-circular-gradient/</loc>
-    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/</loc>
-    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/canvas/</loc>
     <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://everttimberg.io/blog/js-circular-gradient/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+  </url><url>
     <loc>https://everttimberg.io/tags/javascript/</loc>
     <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://everttimberg.io/tags/</loc>
+    <lastmod>2020-10-11T18:19:32-04:00</lastmod>
+  </url><url>
     <loc>https://everttimberg.io/tags/webgl/</loc>
     <lastmod>2020-10-11T18:19:32-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/blog/custom-react-hook-query-state/</loc>
     <lastmod>2020-07-01T10:27:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/hooks/</loc>
     <lastmod>2020-07-01T10:27:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/react/</loc>
     <lastmod>2020-07-01T10:27:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/blog/python-circuit-breaker/</loc>
-    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/architecture/</loc>
     <lastmod>2020-02-18T20:57:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://everttimberg.io/blog/python-circuit-breaker/</loc>
+    <lastmod>2020-02-18T20:57:00-04:00</lastmod>
+  </url><url>
     <loc>https://everttimberg.io/tags/circuitbreaker/</loc>
     <lastmod>2020-02-18T20:57:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/microservices/</loc>
     <lastmod>2020-02-18T20:57:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/python/</loc>
     <lastmod>2020-02-18T20:57:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/blog/flask-api-spec/</loc>
-    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/apispec/</loc>
     <lastmod>2019-10-24T20:06:03-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/tags/open-api/</loc>
     <lastmod>2019-10-24T20:06:03-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://everttimberg.io/blog/flask-api-spec/</loc>
+    <lastmod>2019-10-24T20:06:03-04:00</lastmod>
+  </url><url>
     <loc>https://everttimberg.io/tags/swagger/</loc>
     <lastmod>2019-10-24T20:06:03-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/blog/welcome/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/app/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://everttimberg.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://everttimberg.io/tags/hugo/</loc>
+  </url><url>
+    <loc>https://everttimberg.io/tags/profiling/</loc>
+  </url><url>
     <loc>https://everttimberg.io/blog/python-profiling/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://everttimberg.io/tags/qcachegrind/</loc>
+  </url><url>
     <loc>https://everttimberg.io/app/rna/</loc>
   </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/hugo/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/profiling/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://everttimberg.io/tags/qcachegrind/</loc>
-    <priority>0</priority>
-  </url>
-  
 </urlset>

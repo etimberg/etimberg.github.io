@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Evert Timberg</title>
@@ -6,11 +6,7 @@
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 May 2021 10:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 13 Jun 2021 11:54:06 -0400</lastBuildDate><atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chart.js</title>
       <link>https://everttimberg.io/projects/chartjs/</link>
@@ -18,7 +14,6 @@
       
       <guid>https://everttimberg.io/projects/chartjs/</guid>
       <description>Since late 2014, I have been involved with Chart.js. I am currently a maintainer of the library and have helped it grow and mature.
-
 It&amp;rsquo;s been a great adventure, and my first experience with open-source development. It&amp;rsquo;s scary at times to think that my code gets so much use. Chart.js was also my first experience using the HTML 5 Canvas APIs, but it felt quite natural coming from C++ code that made use of Windows GDI APIs.</description>
     </item>
     
@@ -29,7 +24,6 @@ It&amp;rsquo;s been a great adventure, and my first experience with open-source 
       
       <guid>https://everttimberg.io/projects/rna-binding-site-finder/</guid>
       <description>This was a quick tool I wrote for my wife. It allows the user to search a sequence of RNA for locations that could potentially bind with the search sequence. It has options to allow for partial matches where only part of the string matches a location in the RNA sequence.
-
 Correlation with RNA Secondary Structure By using the secondary structure configuration, it&amp;rsquo;s possible to correlate matches against locations that are single stranded.</description>
     </item>
     
@@ -67,6 +61,16 @@ Correlation with RNA Secondary Structure By using the secondary structure config
       
       <guid>https://everttimberg.io/photography/naples-and-florence/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>vaccine-ontario.ca</title>
+      <link>https://everttimberg.io/projects/vaccine-ontario/</link>
+      <pubDate>Sun, 13 Jun 2021 11:54:06 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/projects/vaccine-ontario/</guid>
+      <description>vaccine-ontario.ca was a website built during the spring of 2021 to help Ontarians find and book a Covid-19 vaccine. The site was built my a multi-disciplinary team of volunteers who came together to help our neighbours.
+The site was built with React, Typescript, and Firestore. The initial UI was built with material-ui which was progressively replaced with hand-written components for performance reasons. My contribution was primarily related to the UI where I tackled key features such as:</description>
     </item>
     
     <item>
@@ -133,7 +137,7 @@ Keeping the documentation with the route definition ensures that it is easy to u
       
       <guid>https://everttimberg.io/blog/python-profiling/</guid>
       <description>Profiling is the first step to improving the performance of code. Suppose we want to profile the Python script below which is based on the example here. It prints out the first 20 Fibonacci numbers and is unoptimized to make the profile exaggerated.
-def fib(n):if n == 0:return 0elif n == 1:return 1else:return fib(n-1) + fib(n-2)def fib_seq(n):seq = [ ]if n &amp;gt; 0:seq.</description>
+def fib(n): if n == 0: return 0 elif n == 1: return 1 else: return fib(n-1) + fib(n-2) def fib_seq(n): seq = [ ] if n &amp;gt; 0: seq.</description>
     </item>
     
     <item>

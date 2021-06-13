@@ -40,7 +40,7 @@ A Simple Custom React Hook to Keep State in Query String - Evert Timberg
 
 
 
-<link rel="stylesheet" href="/css/main.min.fdd6d88fe9efe327679f50ac6317d5e2f06fa45b4fb2882292282988bf20d35a.css" integrity="sha256-/dbYj&#43;nv4ydnn1CsYxfV4vBvpFtPsogikigpiL8g01o=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="/css/main.min.3679995ba0ed4b91edeef430fd34cce1e8b53c123f9993c4861941eee80b46b1.css" integrity="sha256-NnmZW6DtS5Ht7vQw/TTM4ei1PBI/mZPEhhlB7ugLRrE=" crossorigin="anonymous" media="screen">
 
 
 
@@ -231,83 +231,73 @@ A Simple Custom React Hook to Keep State in Query String - Evert Timberg
 </div>
 
 <div class="container markdown top-pad">
-    
-
-<p>A common problem with many web apps is that it is not easy to share links to another user. This is usually due to the fact that the transient page state is only stored in memory.</p>
-
+    <p>A common problem with many web apps is that it is not easy to share links to another user. This is usually due to the fact that the transient page state is only stored in memory.</p>
 <p>I ran into this recently with a page in an app that allowed the user to view a parameter over time. The filter parameters (<code>id</code>, <code>startTime</code>, and <code>endTime</code>) were all stored in the component state and so if the user refreshed the page, all of the previous selection was lost. Fortunately, there is a simple solution: place the parameter values in the <a href="https://en.wikipedia.org/wiki/Query_string">query string</a>.</p>
-
 <p>After implementing this on a couple of routes, I was able to find a common pattern and factor the logic out into a custom hook. The hook is a replacement for React&rsquo;s own <code>useState</code> hook. It serializes the value and updates the query string whenever the value is changed. The hook does not read the initial value from the query string since I wanted to keep it as close to the original <code>useState</code> API as possible.</p>
 
-<h2 id="implementation">Implementation</h2>
+<h2 id="implementation" class="anchor-link"><a href="#implementation">Implementation</a></h2>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#007020;font-weight:bold">import</span> qs <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;query-string&#39;</span>;
+<span style="color:#007020;font-weight:bold">import</span> { useEffect, useMemo, useState } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react&#39;</span>;
+<span style="color:#007020;font-weight:bold">import</span> { useHistory, useLocation } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react-router-dom&#39;</span>;
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">qs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;query-string&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useMemo</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useHistory</span>, <span style="color:#a6e22e">useLocation</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-router-dom&#39;</span>;
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">default</span> <span style="color:#007020;font-weight:bold">function</span> useQueryState&lt;<span style="color:#062873;font-weight:bold">S</span>&gt;(
+  initialState: <span style="color:#902000">S</span> <span style="color:#666">|</span> (() <span style="color:#666">=&gt;</span> S),
+  paramName: <span style="color:#902000">string</span>,
+  serialize<span style="color:#666">:</span> ((val: <span style="color:#902000">S</span>) <span style="color:#666">=&gt;</span> <span style="color:#902000">string</span>) <span style="color:#666">|</span> <span style="color:#007020;font-weight:bold">undefined</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">undefined</span>,
+)<span style="color:#666">:</span> [S, React.Dispatch&lt;<span style="color:#062873;font-weight:bold">React.SetStateAction</span><span style="">&lt;</span><span style="color:#4070a0">S</span>&gt;<span style="color:#666">&gt;</span>] {
+  <span style="color:#007020;font-weight:bold">const</span> history <span style="color:#666">=</span> useHistory();
+  <span style="color:#007020;font-weight:bold">const</span> { pathname, search } <span style="color:#666">=</span> useLocation();
+  <span style="color:#007020;font-weight:bold">const</span> queryParams <span style="color:#666">=</span> useMemo(() <span style="color:#666">=&gt;</span> qs.parse(search), [search]);
 
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useQueryState</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">S</span><span style="color:#f92672">&gt;</span>(
-  <span style="color:#a6e22e">initialState</span>: <span style="color:#66d9ef">S</span> <span style="color:#f92672">|</span> (() <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">S</span>),
-  <span style="color:#a6e22e">paramName</span>: <span style="color:#66d9ef">string</span>,
-  <span style="color:#a6e22e">serialize</span><span style="color:#f92672">:</span> ((<span style="color:#a6e22e">val</span>: <span style="color:#66d9ef">S</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>,
-)<span style="color:#f92672">:</span> [<span style="color:#a6e22e">S</span>, <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Dispatch</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">SetStateAction</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">S</span><span style="color:#f92672">&gt;&gt;</span>] {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">history</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useHistory</span>();
-  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">pathname</span>, <span style="color:#a6e22e">search</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useLocation</span>();
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryParams</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useMemo</span>(() <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">qs</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">search</span>), [<span style="color:#a6e22e">search</span>]);
+  <span style="color:#007020;font-weight:bold">const</span> [stateValue, setState] <span style="color:#666">=</span> useState&lt;<span style="color:#062873;font-weight:bold">S</span>&gt;(initialState);
 
-  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">stateValue</span>, <span style="color:#a6e22e">setState</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">S</span><span style="color:#f92672">&gt;</span>(<span style="color:#a6e22e">initialState</span>);
+  useEffect(() <span style="color:#666">=&gt;</span> {
+    <span style="color:#007020;font-weight:bold">const</span> serializedValue <span style="color:#666">=</span> serialize <span style="color:#666">?</span> serialize(stateValue) <span style="color:#666">:</span> stateValue <span style="color:#666">!==</span> <span style="color:#007020;font-weight:bold">null</span> <span style="color:#666">?</span> <span style="color:#007020">String</span>(stateValue) <span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">null</span>;
 
-  <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serializedValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">serialize</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">serialize</span>(<span style="color:#a6e22e">stateValue</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">stateValue</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">?</span> String(<span style="color:#a6e22e">stateValue</span>) <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
-
-    <span style="color:#75715e">// To avoid infinite loops caused by history.replace (which triggers the history object to change)
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Check to see if our tag is going to change and only update the query param if that is true
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">queryParams</span>[<span style="color:#a6e22e">paramName</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">serializedValue</span>) {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updatedQueryParams</span> <span style="color:#f92672">=</span> {
-        ...<span style="color:#a6e22e">queryParams</span>,
+    <span style="color:#60a0b0;font-style:italic">// To avoid infinite loops caused by history.replace (which triggers the history object to change)
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#60a0b0;font-style:italic">// Check to see if our tag is going to change and only update the query param if that is true
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">if</span> (queryParams[paramName] <span style="color:#666">!==</span> serializedValue) {
+      <span style="color:#007020;font-weight:bold">const</span> updatedQueryParams <span style="color:#666">=</span> {
+        ...queryParams,
       };
 
-      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">serializedValue</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">serializedValue</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) {
-        <span style="color:#a6e22e">updatedQueryParams</span>[<span style="color:#a6e22e">paramName</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">serializedValue</span>;
-      } <span style="color:#66d9ef">else</span> {
-        <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">updatedQueryParams</span>[<span style="color:#a6e22e">paramName</span>];
+      <span style="color:#007020;font-weight:bold">if</span> (serializedValue <span style="color:#666">!==</span> <span style="color:#007020;font-weight:bold">null</span> <span style="color:#666">&amp;&amp;</span> <span style="color:#007020;font-weight:bold">typeof</span> serializedValue <span style="color:#666">!==</span> <span style="color:#4070a0">&#39;undefined&#39;</span>) {
+        updatedQueryParams[paramName] <span style="color:#666">=</span> serializedValue;
+      } <span style="color:#007020;font-weight:bold">else</span> {
+        <span style="color:#007020;font-weight:bold">delete</span> updatedQueryParams[paramName];
       }
   
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">qs</span>.<span style="color:#a6e22e">stringifyUrl</span>({
-        <span style="color:#a6e22e">url</span>: <span style="color:#66d9ef">pathname</span>,
-        <span style="color:#a6e22e">query</span>: <span style="color:#66d9ef">updatedQueryParams</span>,
+      <span style="color:#007020;font-weight:bold">const</span> newURL <span style="color:#666">=</span> qs.stringifyUrl({
+        url: <span style="color:#902000">pathname</span>,
+        query: <span style="color:#902000">updatedQueryParams</span>,
       });
   
-      <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">newURL</span>);
+      history.replace(newURL);
     }
-  }, [<span style="color:#a6e22e">stateValue</span>, <span style="color:#a6e22e">history</span>, <span style="color:#a6e22e">paramName</span>, <span style="color:#a6e22e">pathname</span>, <span style="color:#a6e22e">queryParams</span>, <span style="color:#a6e22e">serialize</span>])
+  }, [stateValue, history, paramName, pathname, queryParams, serialize])
 
-  <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">stateValue</span>, <span style="color:#a6e22e">setState</span>];
-};</code></pre></div>
-
-<h2 id="serializing-complex-values">Serializing Complex Values</h2>
-
+  <span style="color:#007020;font-weight:bold">return</span> [stateValue, setState];
+};
+</code></pre></div>
+<h2 id="serializing-complex-values" class="anchor-link"><a href="#serializing-complex-values">Serializing Complex Values</a></h2>
 <p>The 3rd parameter to the <code>useQueryState</code> hook allows for custom serialization of complex values. I used this to serialize <a href="https://moment.github.io/luxon/">Luxon</a> <code>DateTime</code> objects. When selecting a date only, the time component doesn&rsquo;t matter so we can serialize to a <code>YYYY-MM-DD</code> format by passing the function below as the serializer.</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">serializeDate</span>(<span style="color:#a6e22e">date</span>: <span style="color:#66d9ef">DateTime</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toISODate</span>();
-};</code></pre></div>
-
-<h2 id="usage">Usage</h2>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#007020;font-weight:bold">function</span> serializeDate(date: <span style="color:#902000">DateTime</span>) {
+  <span style="color:#007020;font-weight:bold">return</span> date.toISODate();
+};
+</code></pre></div>
+<h2 id="usage" class="anchor-link"><a href="#usage">Usage</a></h2>
 <p>Now, we can put it all together. Let&rsquo;s say we have some local state for a selected <code>id</code> and want that to appear in the query string as <code>?id=&lt;value&gt;</code>. All we need to do is replace <code>useState</code> with <code>useQueryState</code> and specify the parameter name we want to use.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#007020;font-weight:bold">import</span> React <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react&#39;</span>;
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OurComponent</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#75715e">// As the ID state changes, the query string will automatically update
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// When the value is null, nothing is added to the query string
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">setID</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useQueryState</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">string</span><span style="color:#f92672">|</span><span style="color:#66d9ef">null</span><span style="color:#f92672">&gt;</span>(<span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#39;id&#39;</span>);
+<span style="color:#007020;font-weight:bold">const</span> OurComponent <span style="color:#666">=</span> () <span style="color:#666">=&gt;</span> {
+  <span style="color:#60a0b0;font-style:italic">// As the ID state changes, the query string will automatically update
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">// When the value is null, nothing is added to the query string
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">const</span> [id, setID] <span style="color:#666">=</span> useQueryState&lt;<span style="color:#062873;font-weight:bold">string</span><span style="">|</span><span style="color:#4070a0">null</span>&gt;(<span style="color:#007020;font-weight:bold">null</span>, <span style="color:#4070a0">&#39;id&#39;</span>);
 
   ...
-};</code></pre></div>
-
-<h2 id="future-improvements">Future Improvements</h2>
-
+};
+</code></pre></div>
+<h2 id="future-improvements" class="anchor-link"><a href="#future-improvements">Future Improvements</a></h2>
 <p>The use of <code>query-string</code> can likely be replaced with <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"><code>URLSearchParams</code></a> though I haven&rsquo;t yet tested that. I already had <code>query-string</code> in my project, so it&rsquo;s use didn&rsquo;t cost anything and it supports IE11.</p>
 
 </div>
@@ -345,7 +335,7 @@ A Simple Custom React Hook to Keep State in Query String - Evert Timberg
         
 
 
-<script src="https://everttimberg.io/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://everttimberg.io/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 

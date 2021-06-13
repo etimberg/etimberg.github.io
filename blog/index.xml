@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Evert Timberg</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2020 18:19:32 -0400</lastBuildDate>
-    
-	<atom:link href="https://everttimberg.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 11 Oct 2020 18:19:32 -0400</lastBuildDate><atom:link href="https://everttimberg.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Circular Gradients for the HTML5 Canvas</title>
       <link>https://everttimberg.io/blog/js-circular-gradient/</link>
@@ -66,7 +62,7 @@ Keeping the documentation with the route definition ensures that it is easy to u
       
       <guid>https://everttimberg.io/blog/python-profiling/</guid>
       <description>Profiling is the first step to improving the performance of code. Suppose we want to profile the Python script below which is based on the example here. It prints out the first 20 Fibonacci numbers and is unoptimized to make the profile exaggerated.
-def fib(n):if n == 0:return 0elif n == 1:return 1else:return fib(n-1) + fib(n-2)def fib_seq(n):seq = [ ]if n &amp;gt; 0:seq.</description>
+def fib(n): if n == 0: return 0 elif n == 1: return 1 else: return fib(n-1) + fib(n-2) def fib_seq(n): seq = [ ] if n &amp;gt; 0: seq.</description>
     </item>
     
   </channel>

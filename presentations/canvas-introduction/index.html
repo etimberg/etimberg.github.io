@@ -20,7 +20,6 @@
 <p>Evert Timberg</p>
 <p>June 2, 2021</p>
 </section>
-
 <section>
   <h2>What is the Canvas?</h2>
   <ul>
@@ -44,33 +43,32 @@
       const canvas = document.getElementById('coordinates');
       const ctx = canvas.getContext('2d');
       retinaScale(ctx, 600, 300);
+<pre><code>  ctx.fillStyle = 'red';
+  [
+    { x: 0, y: 0, sa: 0, ea: Math.PI / 2},
+    { x: 0, y: 300, sa: 0, ea: -Math.PI / 2, ccw: true},
+    { x: 600, y: 0, sa: Math.PI / 2, ea: Math.PI },
+    { x: 600, y: 300, sa: Math.PI, ea: 3 * Math.PI / 2}
+  ].forEach(({ x, y, sa, ea, ccw }) =&gt; {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.arc(x, y, 25, sa, ea, ccw);
+    ctx.closePath()
+    ctx.fill();
+  });
+  ctx.textBaseline = 'middle';
+  ctx.textAlign = 'start';
+  ctx.font = '20px solid sans-serif';
+  ctx.fillText(&quot;(0, 0)&quot;, 25, 25);
+  ctx.fillText(&quot;0, 300)&quot;, 25, 275);
 
-      ctx.fillStyle = 'red';
-      [
-        { x: 0, y: 0, sa: 0, ea: Math.PI / 2},
-        { x: 0, y: 300, sa: 0, ea: -Math.PI / 2, ccw: true},
-        { x: 600, y: 0, sa: Math.PI / 2, ea: Math.PI },
-        { x: 600, y: 300, sa: Math.PI, ea: 3 * Math.PI / 2}
-      ].forEach(({ x, y, sa, ea, ccw }) => {
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.arc(x, y, 25, sa, ea, ccw);
-        ctx.closePath()
-        ctx.fill();
-      });
-      ctx.textBaseline = 'middle';
-      ctx.textAlign = 'start';
-      ctx.font = '20px solid sans-serif';
-      ctx.fillText("(0, 0)", 25, 25);
-      ctx.fillText("0, 300)", 25, 275);
-
-      ctx.textAlign = 'end';
-      ctx.fillText("(600, 0)", 575, 25);
-      ctx.fillText("(600, 300)", 575, 275);
-    })();
-  </script>
+  ctx.textAlign = 'end';
+  ctx.fillText(&quot;(600, 0)&quot;, 575, 25);
+  ctx.fillText(&quot;(600, 300)&quot;, 575, 275);
+})();
+</code></pre>
+<p></script></p>
 </section>
-
 <section>
   <h2>CSS Pixels vs Device Pixels</h2>
   <ul>
@@ -90,7 +88,6 @@ const devicePixelWidth = window.devicePixelRatio * window.innerWidth;
     <li>Future topic: Handling retina displays</li>
   </ul>
 </section>
-
 <section>
   <h2>Using the Canvas</h2>
   <pre><code class="html" data-noescape data-trim>
@@ -101,7 +98,6 @@ const canvas = document.getElementById('our-canvas');
 const ctx = canvas.getContext('2d');
   </code></pre>
 </section>
-
 <section>
   <h2>Drawing Simple Shapes</h2>
   <pre><code class="typescript">
@@ -121,7 +117,6 @@ ctx.fillRect(50, 100, 200, 100);
     })();
   </script>
 </section>
-
 <section>
   <h2>Drawing Paths</h2>
   <pre><code class="typescript" style="line-height: 20px;">
@@ -129,17 +124,15 @@ const ctx = document.getElementById('our-canvas').getContext('2d');
 ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
 ctx.strokeStyle = 'rgba(0, 255, 0, 0.5)';
 ctx.lineWidth = 5;
-
-ctx.beginPath();
+<p>ctx.beginPath();
 ctx.moveTo(100, 100);
 ctx.lineTo(200, 100); // Horizontal Line
 ctx.arcTo(250, 150, 200, 200, 50);
-ctx.closePath();
-
-ctx.fill();
+ctx.closePath();</p>
+<p>ctx.fill();
 ctx.stroke();
-  </code></pre>
-  <canvas id="simple-path" style="background-color: white;"></canvas>
+</code></pre>
+<canvas id="simple-path" style="background-color: white;"></canvas></p>
   <script>
     (function() {
       const canvas = document.getElementById('simple-path');
@@ -158,12 +151,10 @@ ctx.stroke();
     })();
   </script>
 </section>
-
 <section>
   <h2>State Management</h2>
   <p>Problem: Since the Canvas context has state, how do we manage that?</p>
   <p>Answer: The context state can be saved to a stack and restored</p>
-
   <pre><code class="typescript">
 ctx.fillStyle = 'blue';
 ctx.save();
@@ -172,7 +163,7 @@ ctx.fillRect(0, 0, 50, 50); // red
 ctx.restore();
 ctx.fillRect(100, 0, 50, 50); // blue
   </code></pre>
-  <canvas id="canvas-state" style="background-color: white;"></canvas>
+<p><canvas id="canvas-state" style="background-color: white;"></canvas></p>
   <script>
     (function() {
       const canvas = document.getElementById('canvas-state');
@@ -187,7 +178,6 @@ ctx.fillRect(100, 0, 50, 50); // blue
     })();
   </script>
 </section>
-
 <section>
   <h2>Text Rendering</h2>
   <pre><code class="typescript">
@@ -210,7 +200,6 @@ ctx.fillText("Text String", 50, 100);
     })();
   </script>
 </section>
-
 <section>
   <h2>Resources</h2>
   <ul>

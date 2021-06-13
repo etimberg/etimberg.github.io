@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Photography on Evert Timberg</title>
     <link>https://everttimberg.io/photography/</link>
     <description>Recent content in Photography on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://everttimberg.io/photography/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://everttimberg.io/photography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploring Toronto</title>
       <link>https://everttimberg.io/photography/exploring-toronto/</link>
