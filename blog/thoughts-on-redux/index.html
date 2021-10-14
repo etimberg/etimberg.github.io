@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Evert Timberg, Software developer and architect in Toronto">
+<title>
+Thoughts on Redux - Evert Timberg
+</title>
+
+
+
+        
+        <meta property="og:title" content="Thoughts on Redux - Evert Timberg" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Evert Timberg, Software developer and architect in Toronto"/>
+<meta property="og:url" content="https://everttimberg.io/blog/thoughts-on-redux/"/>
+<meta property="og:site_name" content="Evert Timberg"/>
+
+
+
+
+<meta property="og:image" content="https://everttimberg.io/home/bitmoji.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/fav.ico">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.3679995ba0ed4b91edeef430fd34cce1e8b53c123f9993c4861941eee80b46b1.css" integrity="sha256-NnmZW6DtS5Ht7vQw/TTM4ei1PBI/mZPEhhlB7ugLRrE=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">Posts</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">About Me</a>
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#photography">Photography</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://everttimberg.io/projects/">
+                  
+                  
+                  Projects
+                  
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#presentations">Presentations</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://everttimberg.io/blog/">
+                  
+                  Back to Posts
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://everttimberg.io/blog/thoughts-on-redux/">Thoughts on Redux</a>
+    </h2>
+    <div class="post-data">
+        Oct 11, 2021 |
+        11 minutes read
+    </div>
+    
+    <div class="blog-share">
+        Share this:
+        
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Thoughts%20on%20Redux%20https%3a%2f%2feverttimberg.io%2fblog%2fthoughts-on-redux%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feverttimberg.io%2fblog%2fthoughts-on-redux%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fab fa-facebook-f"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+        
+        
+        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2feverttimberg.io%2fblog%2fthoughts-on-redux%2f&amp;description=Thoughts%20on%20Redux" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+            <i class="fab fa-pinterest-p"></i>
+            <span class="hidden">Pinterest</span>
+        </a>
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/javascript">
+             javascript</a>,
+         
+           <a href="/tags/react">
+             react</a>,
+         
+           <a href="/tags/hooks">
+             hooks</a>,
+         
+           <a href="/tags/redux">
+             redux</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    <p><a href="https://redux.js.org/">Redux</a> is a state management library that is commonly used in React apps. Redux was created in 2015 and almost immediately became a common sight in React apps. This may have been due to the fact that many of the React docs assumed that Redux was installed along with the popularity of boilerplates that included Redux by default. As a result of this, many front-end developers including myself, incorrectly assumed that React had to be used with Redux.</p>
+
+<h2 id="issues-with-redux" class="anchor-link"><a href="#issues-with-redux">Issues with Redux</a></h2>
+<p>There are a number of common problems with the way that Redux is used inside of large, complicated, React apps. I&rsquo;ve run into each of these before and trying to correct them can take a lot of effort</p>
+<ul>
+<li>Using too much global state</li>
+<li>Fully public state and sharing state between reducers</li>
+<li>Listening to Actions from Another Reducer and trying to infer what the user did</li>
+</ul>
+
+<h3 id="too-much--inappropriate-global-state" class="anchor-link"><a href="#too-much--inappropriate-global-state">Too Much / Inappropriate Global State</a></h3>
+<p>This is the most common problem I have encountered in large React + Redux applications. In this error mode, state that should be local to a component is hoisted into the global redux store so that the component becomes stateless. At first glance, this doesn&rsquo;t pose seem like much of a problem however as an application grows there becomes so many actions and state values that the state object becomes filled with one-off values that will never be shared with another component. Further, as more state is added to redux, handling of resetting state becomes more complex and can often be forgotten.</p>
+<p>For example, consider a button in a modal component that triggers a file download. While the file is downloading, the save button needs to show a loading spinner and then afterwards the file is either downloaded or an error message is shown to the user stating that something went wront.</p>
+<p><img src="/img/redux_modal.png" alt="Download Modal"></p>
+<p>The state here could be modeled with two properties: a boolean to determine when the download is running, and an optional error message.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#007020;font-weight:bold">const</span> state <span style="color:#666">=</span> {
+  loading<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">false</span>,
+  error<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">null</span>,
+};
+</code></pre></div><p>If this state is hoisted into a redux store for the page, it will be retained long after the modal that triggered the download action has been stopped being rendered. Care needs to be taken to ensure that in each case where the component is removed from the page, e.g. navigation, modal close, download success, that the reset action needs to be triggered. It is common to miss all of these cases leading to issues where the modal ishows stale data when used a second or third time.</p>
+
+<h3 id="fully-public-state-and-sharing-state-between-action-creators" class="anchor-link"><a href="#fully-public-state-and-sharing-state-between-action-creators">Fully Public State and Sharing State Between Action Creators</a></h3>
+<p>In redux stores, the entire state object is publicly available to action creators. An action creator is allowed to inspect the full state via a call to <code>getState()</code>. When an action creator does this, it usually this implies that the boundary of a reducer is wrong, however I have often seen <code>getState()</code> used anyway.</p>
+<p>This is an issue because it can lead to situations where other reducers use state fields for reasons beyond their original intended use. This can lead to the introduction of subtle bugs if the reducer that owns the state changes an internal implementation. If we go back to the modal example from the previous section, suppose that a second module looks at the <code>error</code> field and considers only <code>null</code> values to be no error. If the reducer changes the implementation of the reset action such that the <code>error</code> field is reset to an empty string <code>''</code>, the second module will break in subtle ways.</p>
+
+<h3 id="listening-to-actions-from-another-reducer" class="anchor-link"><a href="#listening-to-actions-from-another-reducer">Listening to Actions from Another Reducer</a></h3>
+<p>By design, redux sends every action to every reducer and listening to actions from another reducer is an accepted and encouraged pattern. However I recommend using this sparingly because it can cause a complexity increase, particuarly when asynchronous streams are sending events that interact with each other. An additional concern is that the reducer that owns the action changes the implementation slightly causing breaking changes to downstream code.</p>
+<p>To explore this, we&rsquo;re going to look at a reducer that listens to an action from another reducer and explore some of the downsides. The reducer is responsible for maintaining a list of the user&rsquo;s todos which are loaded when the user logs in.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#007020;font-weight:bold">import</span> { USER_LOGGED_OUT } from <span style="color:#4070a0">&#39;./auth&#39;</span>;
+
+<span style="color:#007020;font-weight:bold">const</span> initialState <span style="color:#666">=</span> {
+  loading<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">false</span>,
+  todos<span style="color:#666">:</span> []
+}
+
+<span style="color:#007020;font-weight:bold">function</span> todoReducer(state <span style="color:#666">=</span> initialState, action) {
+  <span style="color:#007020;font-weight:bold">switch</span> (action.type) {
+    <span style="color:#007020;font-weight:bold">case</span> USER_LOGGED_OUT<span style="color:#666">:</span>
+      <span style="color:#60a0b0;font-style:italic">// On log-out, need to clear all the data from the previous user
+</span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">return</span> initialState;
+    <span style="color:#007020;font-weight:bold">case</span> TODOS_LOADING<span style="color:#666">:</span>
+      <span style="color:#007020;font-weight:bold">return</span> { ...state, loading<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">true</span> };
+    <span style="color:#007020;font-weight:bold">case</span> TODOS_LOAD_SUCCESS<span style="color:#666">:</span>
+      <span style="color:#007020;font-weight:bold">return</span> { ...state, loading<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">false</span>, todos<span style="color:#666">:</span> action.todos };
+    <span style="color:#007020;font-weight:bold">default</span><span style="color:#666">:</span>
+      <span style="color:#007020;font-weight:bold">return</span> state
+  }
+}
+</code></pre></div><p>Now, let&rsquo;s consider what happens if a user logs in and then immediately logs out. The messages that get dispatched to the <code>todoReducer</code> could come in three different orders:</p>
+<ol>
+<li><code>TODOS_LOADING</code>, <code>TODOS_LOAD_SUCCESS</code>, <code>USER_LOGGED_OUT</code></li>
+<li><code>TODOS_LOADING</code>, <code>USER_LOGGED_OUT</code>, <code>TODOS_LOAD_SUCCESS</code></li>
+<li><code>USER_LOGGED_OUT</code>, <code>TODOS_LOADING</code>, <code>TODOS_LOAD_SUCCESS</code></li>
+</ol>
+<p>The code written above only correctly handles the first case. If either of the other two occur, the previous user&rsquo;s data will be loaded into state. The best solution to this problem would be to not dispatch the <code>TODOS</code> actions once the user has logged out, however that often requires the &ldquo;Sharing State&rdquo; pattern to be followed and can make the action creators complicated and unwieldly. It also means that every spot that could dispatch the <code>USER_LOGGED_OUT</code> event needs to be updated to cancel the appropriate requests.</p>
+<p>Another risk is that the auth reducer starts listening to a new action, <code>USER_FORCED_LOGGED_OUT</code> to indicate a slightly different log out path. When that is added, the <code>todoReducer</code> could be missed and the data would not be cleared until the new action is also listened to.</p>
+
+<h2 id="modern-alternatives" class="anchor-link"><a href="#modern-alternatives">Modern Alternatives</a></h2>
+<p>In 2021, there are two great alternatives to Redux: local component state and react contexts.</p>
+
+<h3 id="local-state" class="anchor-link"><a href="#local-state">Local State</a></h3>
+<p>The alternative to placing single-component state in Redux is to use local component state. Contrary to <a href="https://web.archive.org/web/20160320004555/https://www.safaribooksonline.com/blog/2015/10/29/react-local-component-state/">popular belief</a> it is not actually harmful. It turns out that using local component state has some advantages:</p>
+<ol>
+<li>Automatically resetting the state when the component leaves the page</li>
+<li>Allows components to be placed multiple times in the page without state conflicts</li>
+</ol>
+<p>If we go back to our modal example, the download modal look something like this</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#007020;font-weight:bold">import</span> React, { useState } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react&#39;</span>;
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> ModalContainer <span style="color:#666">=</span> () <span style="color:#666">=&gt;</span> {
+  <span style="color:#007020;font-weight:bold">const</span> [downloading, setDownloading] <span style="color:#666">=</span> useState&lt;<span style="color:#062873;font-weight:bold">boolean</span>&gt;(<span style="color:#007020;font-weight:bold">false</span>);
+  <span style="color:#007020;font-weight:bold">const</span> [error, setError] <span style="color:#666">=</span> useState&lt;<span style="color:#062873;font-weight:bold">string</span>&gt;(<span style="color:#4070a0">&#39;&#39;</span>);
+
+  <span style="color:#007020;font-weight:bold">return</span> (
+    &lt;<span style="color:#062873;font-weight:bold">button</span>
+      <span style="color:#4070a0">disabled</span><span style="color:#666">=</span>{downloading}
+      <span style="color:#4070a0">onClick</span><span style="color:#666">=</span>{<span style="color:#007020;font-weight:bold">async</span> () <span style="color:#666">=&gt;</span> {
+        <span style="color:#60a0b0;font-style:italic">// Run download
+</span><span style="color:#60a0b0;font-style:italic"></span>        setDownloading(<span style="color:#007020;font-weight:bold">true</span>);
+
+        <span style="color:#007020;font-weight:bold">try</span> {
+          <span style="color:#60a0b0;font-style:italic">// For the purposes of the example, assume these functions exist
+</span><span style="color:#60a0b0;font-style:italic"></span>          <span style="color:#007020;font-weight:bold">const</span> data <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">await</span> getData();
+          saveFile(<span style="color:#4070a0">&#39;file.txt&#39;</span>, data);
+          setError(<span style="color:#4070a0">&#39;&#39;</span>); <span style="color:#60a0b0;font-style:italic">// If we had an error before, make sure the error state is cleared
+</span><span style="color:#60a0b0;font-style:italic"></span>        } <span style="color:#007020;font-weight:bold">catch</span> err {
+          setError(<span style="color:#4070a0">&#39;Failed to download file&#39;</span>)
+        }
+
+        setDownloading(<span style="color:#007020;font-weight:bold">false</span>);
+      }}
+    &gt;
+      Download File
+    &lt;/<span style="color:#062873;font-weight:bold">button</span>&gt;
+    {error <span style="color:#666">&amp;&amp;</span> (
+      &lt;<span style="color:#062873;font-weight:bold">p</span> <span style="color:#4070a0">className</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;error&#34;</span>&gt;{error}&lt;/<span style="color:#062873;font-weight:bold">p</span>&gt;
+    )}
+  )
+};
+</code></pre></div>
+<h3 id="global-state" class="anchor-link"><a href="#global-state">Global State</a></h3>
+<p>Global state represents application state that needs to be shared by two or more components. This is normally where redux excels, however the <a href="https://reactjs.org/docs/context.html">React Context API</a> can provide a more modern equivalent that has some distinct advantages.</p>
+
+<h3 id="typescript-support" class="anchor-link"><a href="#typescript-support">Typescript Support</a></h3>
+<p>Since React contexts are written like any other JSX component, they can be easily written in Typescript without complicated typing or build tools.</p>
+
+<h3 id="public-apis" class="anchor-link"><a href="#public-apis">Public APIs</a></h3>
+<p>Contexts can provide more than just a state value and I have often used this to provide public APIs for the data the context controls. For example, consider the context below that manages data around a list of users in an application.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#007020;font-weight:bold">import</span> React, { createContext, useEffect, useState, FunctionComponent } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react&#39;</span>;
+
+<span style="color:#007020;font-weight:bold">interface</span> User {
+  id: <span style="color:#902000">number</span>;
+  name: <span style="color:#902000">string</span>;
+}
+
+<span style="color:#007020;font-weight:bold">interface</span> UserContextState {
+  getUser<span style="color:#666">:</span> (id: <span style="color:#902000">number</span>) <span style="color:#666">=&gt;</span> User<span style="color:#666">|</span><span style="color:#007020;font-weight:bold">undefined</span>;
+  getUsers<span style="color:#666">:</span> () <span style="color:#666">=&gt;</span> User[];
+}
+
+<span style="color:#007020;font-weight:bold">const</span> defaultUserState <span style="color:#666">=</span> {
+  getUser<span style="color:#666">:</span> (id: <span style="color:#902000">number</span>) <span style="color:#666">=&gt;</span> <span style="color:#007020;font-weight:bold">undefined</span>,
+  getUsers<span style="color:#666">:</span> () <span style="color:#666">=&gt;</span> [],
+};
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> UserContext <span style="color:#666">=</span> createContext&lt;<span style="color:#062873;font-weight:bold">UserContextState</span>&gt;(defaultUserState);
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> UserContextProvider: <span style="color:#902000">FunctionComponent</span> <span style="color:#666">=</span> ({ children }) <span style="color:#666">=&gt;</span> {
+  <span style="color:#007020;font-weight:bold">const</span> [users, setUsers] <span style="color:#666">=</span> useState&lt;<span style="color:#062873;font-weight:bold">User</span><span style="">[]</span>&gt;([]);
+
+  userEffect(<span style="color:#007020;font-weight:bold">async</span> () <span style="color:#666">=&gt;</span> {
+    <span style="color:#60a0b0;font-style:italic">// On load, get users from the server and save them to the state
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#60a0b0;font-style:italic">// For the purposes of the example, assume we have a function that does this for us
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">const</span> newUsers <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">await</span> getUsersFromServer();
+    setUsers(newUsers);
+  }, []);
+
+  <span style="color:#007020;font-weight:bold">return</span> (
+    &lt;<span style="color:#062873;font-weight:bold">UserContext.Provider</span>
+      <span style="color:#4070a0">value</span><span style="color:#666">=</span>{{
+        getUsers<span style="color:#666">:</span> () <span style="color:#666">=&gt;</span> users,
+        getUser<span style="color:#666">:</span> (id: <span style="color:#902000">number</span>) <span style="color:#666">=&gt;</span> users.find(user <span style="color:#666">=&gt;</span> user.id <span style="color:#666">===</span> id)
+      }}
+    &gt;
+      {children}
+    &lt;/<span style="color:#062873;font-weight:bold">UserContext.Provider</span>&gt;
+  )
+}
+</code></pre></div><p>Because the context does not expose the <code>users</code> state directly, we are free to make internal changes to the context without breaking the public API. For example, the version here has an <code>O(n)</code> implementation of <code>getUser</code>. Instead, we could change the type of the <code>users</code> state from an array to a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> and provide a different implementation of <code>getUsers</code> that still returned an array. This kind of flexibility can improve developer velocity and quickly allow changes to be made without needing to rewrite large portions of the application.</p>
+<p>A downside of contexts can occur when multiple contexts need to depend on each other. This is easier in redux because the entire state is available to all reducers, but due to the fact that contexts are rendered as React components, circular dependencies are not allowed. In my experience, the best use of contexts is for state that is rather well isolated rather than for state that is highly dependent on other application state.</p>
+
+<h3 id="state-change-management" class="anchor-link"><a href="#state-change-management">State Change Management</a></h3>
+<p>I noted in the previous section that contexts were best used when state was well isolated, React contexts make it easier to understand the relationship between different pieces of state. Since we can use normal react component rendering rules, we don&rsquo;t need to care about the exact order in which actions occur, and instead only care about the final outcome. If we revisit the earlier example of users and todos and want to combine their state in some way, it&rsquo;s much easier to handle with contexts. This is a rather contrived example, and could have been implemented in many other ways, however I want to use it to show the power of contexts and dependency management.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#007020;font-weight:bold">import</span> React, { createContext, useContext } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react&#39;</span>;
+
+<span style="color:#60a0b0;font-style:italic">// Assume these exist and are both similar to the UserContext example that was previously shown
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">import</span> { TodoContext, Todo } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;./todos&#39;</span>;
+<span style="color:#007020;font-weight:bold">import</span> { UserContext, User } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;./users&#39;</span>;
+
+<span style="color:#007020;font-weight:bold">interface</span> UserTodo {
+  userID: <span style="color:#902000">number</span>;
+  userName: <span style="color:#902000">string</span>;
+  todoText: <span style="color:#902000">string</span>;
+  todoDate: <span style="color:#902000">date</span>;
+}
+
+<span style="color:#007020;font-weight:bold">interface</span> UserTodoContextState {
+  getUserTodosForDate<span style="color:#666">:</span> (userID: <span style="color:#902000">number</span>, date: <span style="color:#902000">Date</span>) <span style="color:#666">=&gt;</span> UserTodo[];
+}
+
+<span style="color:#007020;font-weight:bold">const</span> defaultContextState <span style="color:#666">=</span> {
+  getUserTodosForDate<span style="color:#666">:</span> (userID: <span style="color:#902000">number</span>, date: <span style="color:#902000">Date</span>) <span style="color:#666">=&gt;</span> [],
+};
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> UserContext <span style="color:#666">=</span> createContext&lt;<span style="color:#062873;font-weight:bold">UserTodoContextState</span>&gt;(defaultContextState);
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> UserTodoContextProvider <span style="color:#666">=</span> ({ children }) <span style="color:#666">=&gt;</span> {
+  <span style="color:#007020;font-weight:bold">const</span> { getUser } <span style="color:#666">=</span> useContext(UserContext);
+  <span style="color:#007020;font-weight:bold">const</span> { getTodosForUser } <span style="color:#666">=</span> useContext(TodoContext);
+
+  <span style="color:#007020;font-weight:bold">return</span> (
+    &lt;<span style="color:#062873;font-weight:bold">UserContext.Provider</span>
+      <span style="color:#4070a0">value</span><span style="color:#666">=</span>{{
+        getUserTodosForDate<span style="color:#666">:</span> (userID: <span style="color:#902000">number</span>, date: <span style="color:#902000">Date</span>) <span style="color:#666">=&gt;</span> {
+          <span style="color:#007020;font-weight:bold">const</span> user <span style="color:#666">=</span> getUser(userID);
+          <span style="color:#007020;font-weight:bold">const</span> todos <span style="color:#666">=</span> getTodosForUser(userID, date);
+          <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">!</span>user <span style="color:#666">||</span> <span style="color:#666">!</span>todos.length) {
+            <span style="color:#007020;font-weight:bold">return</span> [];
+          }
+
+          <span style="color:#007020;font-weight:bold">return</span> todos.map(todo <span style="color:#666">=&gt;</span> ({
+            userID,
+            userName: <span style="color:#902000">user.name</span>,
+            todoText: <span style="color:#902000">todo.text</span>,
+            todoDate: <span style="color:#902000">todo.date</span>,
+          }))
+        }
+      }}
+    &gt;
+      {children}
+    &lt;/<span style="color:#062873;font-weight:bold">UserContext.Provider</span>&gt;
+  )
+}
+</code></pre></div><p>The beauty about the context based solution is that React will re-render the context provider whenever the <code>UserContext</code> or <code>TodoContext</code> change. Now, we don&rsquo;t have to deal with understanding why the data changed, just that it did. If either of the contexts are refactored, the <code>UserTodoContext</code> will still work without changes.</p>
+
+<h3 id="revisiting-listening-to-actions-from-another-reducer" class="anchor-link"><a href="#revisiting-listening-to-actions-from-another-reducer">Revisiting Listening to Actions from Another Reducer</a></h3>
+<p>Earlier, I showed the example of how a <code>USER_LOGGED_OUT</code> action could interact with two other actions that were loading the user&rsquo;s todo list. Let&rsquo;s explore how this could be made a lot simpler with contexts.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tsx" data-lang="tsx"><span style="color:#007020;font-weight:bold">import</span> React, { createContext, useContext, useEffect, useState } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;react&#39;</span>;
+
+<span style="color:#60a0b0;font-style:italic">// Assume this exists and provides some info about if the user is logged in or not
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">import</span> { AuthContext } <span style="color:#007020;font-weight:bold">from</span> <span style="color:#4070a0">&#39;./auth&#39;</span>;
+
+<span style="color:#007020;font-weight:bold">interface</span> Todo {
+  date: <span style="color:#902000">Date</span>;
+  text: <span style="color:#902000">string</span>;
+}
+
+<span style="color:#007020;font-weight:bold">interface</span> UserTodoContextState {
+  getUserTodosForDate<span style="color:#666">:</span> (userID: <span style="color:#902000">number</span>, date: <span style="color:#902000">Date</span>) <span style="color:#666">=&gt;</span> UserTodo[];
+}
+
+<span style="color:#007020;font-weight:bold">const</span> defaultContextState <span style="color:#666">=</span> {
+  todos: <span style="color:#902000">Todo</span>[];
+};
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> TodoContext <span style="color:#666">=</span> createContext&lt;<span style="color:#062873;font-weight:bold">TodoContext</span>&gt;(defaultContextState);
+
+<span style="color:#007020;font-weight:bold">export</span> <span style="color:#007020;font-weight:bold">const</span> TodoContextProvider <span style="color:#666">=</span> ({ children }) <span style="color:#666">=&gt;</span> {
+  <span style="color:#007020;font-weight:bold">const</span> [todos, setTodos] <span style="color:#666">=</span> useState&lt;<span style="color:#062873;font-weight:bold">Todo</span><span style="">[]</span>&gt;([]);
+
+  <span style="color:#007020;font-weight:bold">const</span> { isLoggedIn, userID } <span style="color:#666">=</span> useContext(AuthContext);
+
+  useEffect(() <span style="color:#666">=&gt;</span> {
+    <span style="color:#007020;font-weight:bold">if</span> (isLoggedIn) {
+      <span style="color:#60a0b0;font-style:italic">// User has logged in, so we need to load the todos
+</span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">const</span> controller <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> AbortController();
+
+      <span style="color:#007020;font-weight:bold">const</span> fetchTodos <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">async</span> () <span style="color:#666">=&gt;</span> {
+        <span style="color:#007020;font-weight:bold">try</span> {
+          <span style="color:#007020;font-weight:bold">await</span> fetch(<span style="color:#4070a0">`http://example.com/api/todos/</span><span style="color:#70a0d0;font-style:italic">${</span>userID<span style="color:#70a0d0;font-style:italic">}</span><span style="color:#4070a0">`</span>, { signal: <span style="color:#902000">controller.signal</span> });
+        } <span style="color:#007020;font-weight:bold">catch</span> {
+          setTodos([]);
+        }
+      };
+
+      <span style="color:#60a0b0;font-style:italic">// We don&#39;t await this because we want it to run async
+</span><span style="color:#60a0b0;font-style:italic"></span>      fetchTodos();
+
+      <span style="color:#60a0b0;font-style:italic">// Cleanup function that will abort the fetch request.
+</span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#60a0b0;font-style:italic">// React will call this if the effect runs again which will happen
+</span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#60a0b0;font-style:italic">// if `isLoggedIn` transition from true to false
+</span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">return</span> () <span style="color:#666">=&gt;</span> controller.abort()
+    } <span style="color:#007020;font-weight:bold">else</span> {
+      <span style="color:#60a0b0;font-style:italic">// User has logged out, clear the todo list
+</span><span style="color:#60a0b0;font-style:italic"></span>      setTodos([]);
+    }
+  }, [isLoggedIn, userID])
+
+  <span style="color:#007020;font-weight:bold">return</span> (
+    &lt;<span style="color:#062873;font-weight:bold">TodoContext.Provider</span>
+      <span style="color:#4070a0">value</span><span style="color:#666">=</span>{{
+        todos,
+      }}
+    &gt;
+      {children}
+    &lt;/<span style="color:#062873;font-weight:bold">TodoContext.Provider</span>&gt;
+  )
+}
+</code></pre></div><p>This context is quite simple and yet provides a lot of functionality. Todos are automatically loaded when the user is logged in and once the user logs out, the todos are cleared. It doesn&rsquo;t matter how the user came to be logged out, just that they were which makes understanding this code easier.</p>
+
+<h2 id="closing-thoughts" class="anchor-link"><a href="#closing-thoughts">Closing Thoughts</a></h2>
+<p>While Redux in 2021 is still a good solution for state that needs to be shared across an entire application, new development should strongly consider using React contexts as they allow exposing an API to consumers, they are easily written in Typescript, and dependency management via React makes understanding the relationship between data simpler and clearer.</p>
+
+</div>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        Copyright Evert Timberg - 2021
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://everttimberg.io/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redux on Evert Timberg</title>
+    <link>https://everttimberg.io/tags/redux/</link>
+    <description>Recent content in redux on Evert Timberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Oct 2021 10:42:47 -0400</lastBuildDate><atom:link href="https://everttimberg.io/tags/redux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts on Redux</title>
+      <link>https://everttimberg.io/blog/thoughts-on-redux/</link>
+      <pubDate>Mon, 11 Oct 2021 10:42:47 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/blog/thoughts-on-redux/</guid>
+      <description>Redux is a state management library that is commonly used in React apps. Redux was created in 2015 and almost immediately became a common sight in React apps. This may have been due to the fact that many of the React docs assumed that Redux was installed along with the popularity of boilerplates that included Redux by default. As a result of this, many front-end developers including myself, incorrectly assumed that React had to be used with Redux.</description>
+    </item>
+    
+  </channel>
+</rss>

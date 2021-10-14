@@ -6,7 +6,16 @@
     <description>Recent content in react on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2020 10:27:00 -0400</lastBuildDate><atom:link href="https://everttimberg.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Oct 2021 10:42:47 -0400</lastBuildDate><atom:link href="https://everttimberg.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts on Redux</title>
+      <link>https://everttimberg.io/blog/thoughts-on-redux/</link>
+      <pubDate>Mon, 11 Oct 2021 10:42:47 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/blog/thoughts-on-redux/</guid>
+      <description>Redux is a state management library that is commonly used in React apps. Redux was created in 2015 and almost immediately became a common sight in React apps. This may have been due to the fact that many of the React docs assumed that Redux was installed along with the popularity of boilerplates that included Redux by default. As a result of this, many front-end developers including myself, incorrectly assumed that React had to be used with Redux.</description>
+    </item>
+    
     <item>
       <title>A Simple Custom React Hook to Keep State in Query String</title>
       <link>https://everttimberg.io/blog/custom-react-hook-query-state/</link>

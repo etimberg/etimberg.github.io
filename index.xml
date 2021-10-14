@@ -6,7 +6,7 @@
     <description>Recent content on Evert Timberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Jun 2021 11:54:06 -0400</lastBuildDate><atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Oct 2021 10:42:47 -0400</lastBuildDate><atom:link href="https://everttimberg.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chart.js</title>
       <link>https://everttimberg.io/projects/chartjs/</link>
@@ -61,6 +61,15 @@ Correlation with RNA Secondary Structure By using the secondary structure config
       
       <guid>https://everttimberg.io/photography/naples-and-florence/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Thoughts on Redux</title>
+      <link>https://everttimberg.io/blog/thoughts-on-redux/</link>
+      <pubDate>Mon, 11 Oct 2021 10:42:47 -0400</pubDate>
+      
+      <guid>https://everttimberg.io/blog/thoughts-on-redux/</guid>
+      <description>Redux is a state management library that is commonly used in React apps. Redux was created in 2015 and almost immediately became a common sight in React apps. This may have been due to the fact that many of the React docs assumed that Redux was installed along with the popularity of boilerplates that included Redux by default. As a result of this, many front-end developers including myself, incorrectly assumed that React had to be used with Redux.</description>
     </item>
     
     <item>
